@@ -1,11 +1,11 @@
 {
-  "name": "hugulp",
+  "name": "huggle",
   "version": "0.0.0",
   "private": true,
   "authors": [
-    "Jesse Yang <jyyjcc@gmail.com>"
+    "Jesse Yang <kissmud@gmail.com>"
   ],
-  "description": "personal blog with hugo + gulp.js boilerplate",
+  "description": "hugo + gulp.js static site boilerplate",
   "keywords": [
     "blog",
     "static",
@@ -21,6 +21,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.0"
+  },
+  "override": {
   }
 }
