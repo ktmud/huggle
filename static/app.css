@@ -1,0 +1,83 @@
+.home .slogan {
+  font-size: 20px;
+  margin: 1em 0;
+}
+.home .intro {
+  margin: 2em 0;
+  font-size: 16px;
+}
+.home hr {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.absmiddle {
+  margin: 10% auto;
+  max-width: 600px;
+}
+#header {
+  margin: 30px 0 20px;
+}
+#footer {
+  color: #aaa;
+  padding: 60px 0 30px;
+}
+.layout-single #footer {
+  text-align: center;
+}
+#disqus_thread {
+  margin-top: 60px;
+}
+
+.highlight {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 12px;
+  margin-bottom: 1em;
+}
+.highlight pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: 1.2em;
+  border: 0;
+  line-height: 1.2;
+}
+.btn {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+body {
+  font-family: 'Merriweather', 'Lora', serif;
+}
+.subtitle {
+  font-size: 1.5em;
+  color: #666;
+}
+.heading {
+  margin-bottom: 30px;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #eee;
+}
+.readable {
+  margin-bottom: 60px;
+}
+p,
+ul,
+ol {
+  margin-bottom: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0.5em;
+}
+h2,
+h3,
+h4 {
+  margin-top: 1em;
+}

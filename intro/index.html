@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Hugo &#43; gulp.js = Huggle.</title>
+  <link rel="stylesheet" href="http://ktmud.github.com/huggle/static/vendor.css">
+<link rel="stylesheet" href="http://ktmud.github.com/huggle/static/app.css">
+<link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Lora:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+ </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1080811-19', 'ktmud.github.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+<body>
+  <header id="header">
+  <div class="container">
+    <a class="navbar-brandh" href="http://ktmud.github.com/huggle/">Home</a>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-10">
+
+
+<article class="readable">
+  <div class="heading">
+    <h1>Hugo &#43; gulp.js = Huggle.</h1>
+    
+      <p class="subtitle">Build a highly customizable personal blog blazing fast</p>
+    
+  </div>
+  
+
+<h2 id="toc_0">Introduction</h2>
+
+<p><a href="http://hugo.spf13.com/">Hugo</a> is a fast and flexible static site generator written in Go.
+It does an amazing job in <strong>organizing</strong>, <strong>templating</strong> and <strong>building</strong> contents.</p>
+
+<p>There&rsquo;s only one thing missing: <strong>a more organized way to write CSS/JavaScript</strong> your site will need.
+Of course we shouldn&rsquo;t expect Hugo to do everything for us, while there are already kinds
+of solutions for this, which designers and front-end developers may found quite familar with:</p>
+
+<ul>
+<li><a href="http://gruntjs.com/">Grunt</a>      - The most well-known JavaScript task runner</li>
+<li><a href="http://brunch.io/">Brunch</a>       - An all-in-one toolset emphasized on building rich HTML5 apps</li>
+<li><a href="http://gulpjs.com/">gulp.js</a>     - The streaming build system</li>
+<li><a href="http://yeoman.io/">Yeoman</a>       - Modern webapp scaffolding tool</li>
+</ul>
+
+<p>There is alreay an existing static site building tool, called <a href="http://assemble.io/">Assemble</a>,
+which is built as a grunt plugin. It provides highly customizable configure options,
+and a seamless integration with existing Grunt plugins. Unfortunately, it&rsquo;s not fast enough,
+and with all that big bunch of tasks to run, the <code>gruntfile.js</code> can be very hard to read and maintain.</p>
+
+<p>It&rsquo;s all about speed and ease, right? So here we are, trying to combine two useful tools,
+<a href="http://hugo.spf13.com/">Hugo</a> and <a href="http://gulpjs.com/">gulp.js</a>, which are both designed to be
+fast and easy to use.</p>
+
+<p>By running two tasks respectively, <strong>generate html from organized markdowns</strong> and
+<strong>build assets from programmable css/js</strong>, we gain the maximum speed and flexibility.</p>
+
+<h3 id="toc_1">What can you get?</h3>
+
+<ul>
+<li>Build a 200+ blogs site in seconds</li>
+<li>Edit, save, and see live changes in less than on second</li>
+<li>Organize contents in <a href="http://hugo.spf13.com/content/organization">a meaningful way</a></li>
+<li>Simple yet powerful golang html template, with partials and <a href="http://hugo.spf13.com/extras/shortcodes">shortcodes</a> support</li>
+<li>Write site UI in coffee/stylus/sass/less, anything you like</li>
+<li>Write browser code like your are in node.js</li>
+</ul>
+
+<h2 id="toc_2">Quick start</h2>
+
+<ol>
+<li><a href="http://hugo.spf13.com/overview/installing">Install hugo</a> //
+Long story short: <a href="https://github.com/spf13/hugo/releases">download the binary</a></li>
+<li>Fork and clone <a href="https://github.com/ktmud/huggle">this repo</a></li>
+<li><code>npm install</code></li>
+<li>Create a <code>your-post.md</code> under <code>content/posts/</code> and edit it</li>
+<li><code>make server</code> to see the result</li>
+</ol>
+
+<p>If you want to edit css/js of your site:</p>
+
+<ol>
+<li>(optional) Install <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">livereload</a></li>
+<li><code>make watch</code></li>
+<li>Edit files under <code>/assets</code> and <code>/layouts</code></li>
+</ol>
+
+<p>When you&rsquo;d like to publish your site, see <code>make gh-pages</code>.</p>
+
+<p>Also, don&rsquo;t forget to look into docs on <a href="http://hugo.spf13.com/">Hugo</a> and <a href="http://gulpjs.com/">gulp.js</a>.</p>
+
+<h2 id="toc_3">Trouble shooting</h2>
+
+<h4 id="toc_4">Rendering error: html/template: &ldquo;xxx.html&rdquo; is an incomplete template</h4>
+
+<p>It is because you have grammer error in your golange html template.
+Remember, you can only use double quote for strings.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">{{</span> <span style="color: #f8f8f2">template</span> <span style="color: #e6db74">&quot;chrome/includes.html&quot;</span> <span style="color: #960050; background-color: #1e0010">.</span> <span style="color: #75715e">}}</span>
+</pre></div>
+
+<p>Use <code>&quot;</code> instead of <code>'</code>, and blankspace after the <code>.</code> are all mandatory.</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'huggle';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+        <footer id="footer">
+&copy; 2014 Huggle.
+&nbsp;<a href="">Github</a>
+</footer>
+<script src="http://ktmud.github.com/huggle/static/vendor.js"></script>
+<script src="http://ktmud.github.com/huggle/static/app.js"></script>
+
+       </div>
+    </div>
+  </div>
+</body>
+</html>
+
