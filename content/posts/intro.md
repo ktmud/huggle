@@ -65,7 +65,7 @@ Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp
 
 #### Rendering error: html/template: "xxx.html" is an incomplete template
 
-It is because you have grammer error in your golange html template.
+It is because there is grammer error in your golange html template.
 Remember, you can only use double quote for strings.
 
 {{% highlight jinja %}}
