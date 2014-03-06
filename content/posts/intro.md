@@ -57,7 +57,7 @@ If you want to edit css/js of your site:
 1. `make watch`
 1. Edit files under `/assets` and `/layouts`
 
-When you'd like to publish your site, create your own `gh-pages` branch and run `make gh-pages`.
+When you'd like to publish your site, run `make gh-pages`.
 
 Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp.js](http://gulpjs.com/).
 

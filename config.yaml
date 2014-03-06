@@ -1,8 +1,8 @@
+---
 indexes:
   tag: 'tags'
-  group: 'groups'
-  menu: 'menu'
 permalinks:
   posts: /:slug/
+baseurl: 'http://ktmud.github.com/huggle/'
 title: 'Huggle.'
-baseurl: 'http://yoursite.com'
+...
