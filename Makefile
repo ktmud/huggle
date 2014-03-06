@@ -8,3 +8,8 @@ server:
 
 init:
 	npm install
+
+clean:
+	rm -rf public
+	rm -rf static/*
+	npm prune

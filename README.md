@@ -13,10 +13,15 @@ Ships with a simplistic theme.
 ## Usage
 
 1. [Install hugo](http://hugo.spf13.com/overview/installing)
-1. Clone this repo 
+1. Fork and clone this repo, checkout your own branch
 1. `make init`
-1. Add some posts in content/posts/
+1. Write your blog in content/posts/
 1. `make watch` to develop, `make server` to build for production.
+
+### Why you need a branch?
+
+In case you want to sync with this upstream.
+
 
 ## Directories
 

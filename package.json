@@ -31,7 +31,7 @@
     "gulp-include": "^0.2.2",
     "gulp-browserify": "^0.4.6",
     "gulp-concat": "^2.1.7",
-    "gulp-rename": "^1.2.0"
+    "gulp-rename": "^1.2.0",
     "gulp-livereload": "^1.2.0",
     "gulp-filter": "^0.3.1"
   }
