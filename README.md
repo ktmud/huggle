@@ -17,6 +17,8 @@ Ships with a simplistic theme.
 1. `make init`
 1. Write your blog in content/posts/
 1. `make watch` to develop, `make server` to build for production.
+1. Install [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+   extension for live reload.
 
 ### Why need a branch?
 

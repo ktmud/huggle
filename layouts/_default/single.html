@@ -1,11 +1,12 @@
 {{ template "chrome/layouts/default.begin.html" . }}
 
-
 <article class="readable">
-  <h1>{{ .Title }}</h1>
-  {{ if isset .Params "subtitle" }}
-    <p class="subtitle">{{ index .Params "subtitle" }}</p>
-  {{ end }}
+  <div class="heading">
+    <h1>{{ .Title }}</h1>
+    {{ if isset .Params "subtitle" }}
+      <p class="subtitle">{{ index .Params "subtitle" }}</p>
+    {{ end }}
+  </div>
   {{ .Content }}
 </article>
 

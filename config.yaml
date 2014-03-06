@@ -1,4 +1,3 @@
-layoutdir: 'templates'
 indexes:
   tag: 'tags'
   group: 'groups'
