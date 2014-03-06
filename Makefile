@@ -11,11 +11,10 @@ clean:
 	rm -rf public
 
 publish:
-	git branch -D gh_pages
-	git checkout -b gh_pages
 	gulp build
 	hugo
+
+gh-pages: publish
 	mv public /tmp/huggle-pages
-	git rm * --cached
-	echo "" > .gitignore
+	rm -r ./*
 	mv /tmp/huggle-pages/* ./
