@@ -1,0 +1,38 @@
+{
+  "name": "hugulp",
+  "version": "0.0.0",
+  "description": "static site generator boilterplate with gulp.js and hugo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ktmud/hugulp"
+  },
+  "keywords": [
+    "static",
+    "site",
+    "generator",
+    "gulpjs"
+  ],
+  "author": "ktmud <kissmud@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ktmud/hugulp/issues"
+  },
+  "homepage": "https://github.com/ktmud/hugulp",
+  "devDependencies": {
+    "gulp-bower-files": "~0.1.11",
+    "gulp-uglify": "^0.2.1",
+    "gulp-stylus": "0.0.13",
+    "gulp": "^3.5.5",
+    "gulp-coffee": "^1.4.1",
+    "gulp-include": "^0.2.2",
+    "gulp-browserify": "^0.4.6",
+    "gulp-concat": "^2.1.7",
+    "gulp-rename": "^1.2.0"
+    "gulp-livereload": "^1.2.0",
+    "gulp-filter": "^0.3.1"
+  }
+}

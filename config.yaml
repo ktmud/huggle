@@ -1,0 +1,8 @@
+layoutdir: 'templates'
+indexes:
+  tag: 'tags'
+  group: 'groups'
+  menu: 'menu'
+permalinks:
+  posts: /:year/:month/:title/
+baseurl: ''

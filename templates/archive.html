@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Title }}</title>
+    {{ template "chrome/head.html" .}}
+  </head>
+  <body>
+    {{ template "chrome/header.html" .}}
+    <h1>Archives</h1>
+    <div id="archive-list">
+      {{ range .Data.Posts.ByDate }}
+        {{ .Render "li"}}
+      {{ end }}
+    </div>
+  </body>
+</html>

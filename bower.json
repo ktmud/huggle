@@ -1,0 +1,26 @@
+{
+  "name": "hugulp",
+  "version": "0.0.0",
+  "private": true,
+  "authors": [
+    "Jesse Yang <jyyjcc@gmail.com>"
+  ],
+  "description": "personal blog with hugo + gulp.js boilerplate",
+  "keywords": [
+    "blog",
+    "static",
+    "site"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}
