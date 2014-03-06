@@ -1,7 +1,14 @@
-{{ template "chrome/begin.html" . }}
-
-Hello world.
-
-{{ .Site.Title }}
-
-{{ template "chrome/end.html" . }}
+{{ template "chrome/layouts/landing.begin.html" . }}
+<div class="home">
+  <h1>Huggle.</h1>
+  <p class="slogan"><em>Generate a site faster</em>
+  <p class="intro">
+    Combine the power of <a href="http://hugo.spf13.com/">Hugo</a> + <a href="http://gulpjs.com">gulp</a>,
+    now you can <br>
+    <strong>build / preview / serve</strong>
+    a static site faster than ever.
+  </p>
+  <hr>
+  <a class="btn btn-primary btn-lg" href="{{ "intro/" | urlize }}">See how it works</a>
+</div>
+{{ template "chrome/layouts/landing.end.html" . }}

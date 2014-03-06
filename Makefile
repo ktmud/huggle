@@ -1,15 +1,11 @@
-watch:
-	@gulp & 2>1
-	@hugo server --watch
+watch: clean
+	@gulp & hugo server --watch
 
 server:
-	@gulp build
-	@hugo
+	@gulp build && hugo server
 
 init:
 	npm install
 
 clean:
 	rm -rf public
-	rm -rf static/*
-	npm prune

@@ -4,5 +4,6 @@ indexes:
   group: 'groups'
   menu: 'menu'
 permalinks:
-  posts: /:year/:month/:title/
-baseurl: ''
+  posts: /:slug/
+title: 'Huggle.'
+baseurl: 'http://yoursite.com'

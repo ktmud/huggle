@@ -1,1 +1,14 @@
-{{ .Content }}
+{{ template "chrome/layouts/default.begin.html" . }}
+
+
+<article class="readable">
+  <h1>{{ .Title }}</h1>
+  {{ if isset .Params "subtitle" }}
+    <p class="subtitle">{{ index .Params "subtitle" }}</p>
+  {{ end }}
+  {{ .Content }}
+</article>
+
+{{ template "chrome/disqus.html" . }}
+
+{{ template "chrome/layouts/default.end.html" . }}
