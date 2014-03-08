@@ -566,7 +566,7 @@ Prism.languages.yaml = {
 		lookbehind: true
 	},
 	'keyword': {
-    pattern: /(?:\n)[ \t]*[\$\w\-\.]+?\s*:(\s+)/ig,
+    pattern: /(?:\n|^)[ \t]*[\$\w\-\.]+?\s*:(\s+)/ig,
     inside: {
       'punctuation': /:/g
     }
