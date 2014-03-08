@@ -2,10 +2,11 @@
 title: Hugo + gulp.js = Huggle.
 subtitle: 速度极快的静态网站构建工具
 date: 2014-03-04
+slug: zh/intro/
+
 lang: zh
 otherlangs: ["en"]
-otherslugs: ["intro"]
-slug: zh/intro
+otherurls: ["/intro/"]
 ---
 
 ## 什么是 Huggle ？
@@ -20,42 +21,44 @@ Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具
 
 你可以使用完全基于 NodeJS 和 Grunt.js 生态的 [Assemble](http://assemble.io/) ，可惜就是太慢了。
 
-既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。所以有了 **Huggle** ，
-把同样速度巨快的流模式前端构建工具 [gulp.js](http://gulpjs.com/) 与 Hugo 结合在一起，
-让你能享受闪电般开发、编辑、构建静态网站的快感。
+既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。
+于是我们把同样拥有极速体验的流模式构建工具 [gulp.js](http://gulpjs.com/) 与 Hugo 结合在一起，
+让你能免去一切等待，专心在开发模版和书写文章上。
 
 ## 开始
 
-主要步骤就两步：
+要开始使用 Huggle ，仅需两步：
 
 1. [下载Hugo](https://github.com/spf13/hugo/releases)
 1. [克隆本仓库](https://github.com/ktmud/huggle)
 
-下载到符合你系统版本的可执行文件后，需要添加到 $PATH 目录（[详细](http://hugo.spf13.com/overview/installing)）。
+步骤一中下载到的符合你系统版本的可执行文件，需要添加到 $PATH 目录（[详细](http://hugo.spf13.com/overview/installing)）。
 
-克隆好你自己的 Huggle 版本后，执行 `npm install && make watch` ，
-然后就开始在 `content/` 目录下添加你自己的文章吧。
+克隆好 Huggle 之后，执行 `npm install && make watch` ，
+即可在 `content/` 目录下开始编辑你自己的文章。
 
 ## 进阶
 
 ### 改善开发体验
 
-相信我，一旦习惯这些流氓的用法后，就再也回不去了：
+Huggle 打包了大量流行的开发者福利：
 
 1. 安装 [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
-   ，打开预览网站后点一下 livereload 图标，保存文件浏览器将自动刷新
-2. 此项目已配置了 [browserfy](http://browserify.org/) 和 [coffeeify](https://github.com/substack/coffeeify) ，
+   ，打开预览网站后点一下其图标，保存文件浏览器将自动刷新
+2. 此项目已预置 [browserfy](http://browserify.org/) 和 [coffeeify](https://github.com/substack/coffeeify) ，
    你可以在 `./assets` 目录按照 nodejs 的 `require` 用法来书写浏览器脚本。
 3. `./assets/styles` 目录是样式文件的源代码，所有目录结构都可以在 `gulpfile.js` 里修改，
-   你当然可以按照自己的习惯将 sass 换成你习惯的 less 或 stylus ，只需安装相应的 [gulp 插件](http://gulpjs.com/plugins/)即可。
+   你也可以按照自己的习惯将 sass 换成习惯的 less 或 stylus ，只需安装相应的 [gulp 插件](http://gulpjs.com/plugins/)即可。
 
 
 ### 多语言支持
 
+Huggle 也搭建了使用 Hugo 实现多语言支持的样本。你只需：
+
 1. 在 `config.yaml` 中设定你的默认语言
 2. 在 markdown 头部的 [front matter](http://hugo.spf13.com/content/front-matter) 里添加 `lang: zh` 选项。标准语言代码可以参考[这里](http://www.w3schools.com/tags/ref_language_codes.asp)。
-3. 如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： `slug: zh/article-title-goes-hear` 
-4. 如果某篇文字有其他语言版本，添加 `otherlangs: ["en"]`
+3. 如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： `slug: /zh/article-title-goes-here`
+4. 如果某篇文字有其他语言版本，添加 `otherlangs: ["en"]` 和 `otherurls: ["/en/article-title"]`
 
 如本文的[源码](https://raw.github.com/ktmud/huggle/master/content/intro.zh.md)所示：
 

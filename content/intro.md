@@ -2,9 +2,11 @@
 title: Hugo + gulp.js = Huggle.
 subtitle: Build a highly customizable personal blog blazing fast
 date: 2014-03-04
-otherlangs: ["zh"]
-otherslugs: ["zh/intro"]
 slug: intro
+
+otherlangs: ["zh"]
+otherurls: ["/zh/intro/"]
+
 ---
 
 ## Introduction

@@ -2,11 +2,13 @@
 title: Huggle.
 slogan: Generate a static site faster than ever
 date: 2014-03-04
-lang: en
 slug: "/"
+
+lang: en
 otherlangs: ["zh"]
-otherslugs: ["zh/"]
+otherurls: ["/zh/"]
 go: See how it works
+
 ---
 
 <p class="intro">

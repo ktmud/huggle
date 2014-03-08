@@ -7,7 +7,7 @@
 &nbsp;
 {{ if .Params.otherlangs }}
   {{ range $index, $lang := .Params.otherlangs }}
-    <a href="{{ $.Site.BaseUrl }}/{{echoParam $.Params.otherslugs $index}}">{{ index $.Site.Params.languages $lang }}</a>
+    <a href="{{ $.Site.BaseUrl }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
     |
   {{ end }}
 {{ end }}

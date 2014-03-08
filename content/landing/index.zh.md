@@ -1,11 +1,14 @@
 ---
 title: Huggle.
 slogan: 构建静态网站，以前所未有之快
+slug: "zh/"
+
 date: 2014-03-04
 lang: zh
-slug: "zh/"
+
 otherlangs: ["en"]
-otherslugs: [""]
+otherurls: ["/"]
+
 ---
 
 <p class="intro">
