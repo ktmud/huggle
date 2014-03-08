@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Recent Content on Huggle. </title>
-    <link>http://ktmud.github.com/huggle/index.xml</link>
+    <link>http://ktmud.github.io/huggle/index.xml</link>
     <language>en</language>
     <author>Jesse Yang</author>
     <rights>Copyright (c) 2008 - 2013, Jesse Yang; all rights reserved.</rights>
@@ -11,10 +11,10 @@
     <item>
       <language>en</language>
       <title>Hugo &#43; gulp.js = Huggle.</title>
-      <link>http://ktmud.github.com/huggle/intro</link>
+      <link>http://ktmud.github.io/huggle/intro</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.com/huggle/intro</guid>
+      <guid>http://ktmud.github.io/huggle/intro</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
@@ -101,10 +101,10 @@ Remember, you can only use double quote for strings.&lt;/p&gt;
     <item>
       <language>zh</language>
       <title>Hugo &#43; gulp.js = Huggle.</title>
-      <link>http://ktmud.github.com/huggle/zh/intro</link>
+      <link>http://ktmud.github.io/huggle/zh/intro</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.com/huggle/zh/intro</guid>
+      <guid>http://ktmud.github.io/huggle/zh/intro</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;什么是 Huggle ？&lt;/h2&gt;
@@ -231,10 +231,10 @@ slug: zh/intro
     <item>
       <language>en</language>
       <title>Huggle.</title>
-      <link>http://ktmud.github.com/huggle/</link>
+      <link>http://ktmud.github.io/huggle/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.com/huggle/</guid>
+      <guid>http://ktmud.github.io/huggle/</guid>
       <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
 Combine the power of &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;,
 now you can &lt;br&gt;
@@ -252,10 +252,10 @@ a site in milliseconds.&lt;/p&gt;
     <item>
       <language>zh</language>
       <title>Huggle.</title>
-      <link>http://ktmud.github.com/zh/</link>
+      <link>http://ktmud.github.io/zh/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.com/zh/</guid>
+      <guid>http://ktmud.github.io/zh/</guid>
       <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
 整合两大极速工具：&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;，&lt;br&gt;
 &lt;strong&gt;编辑 / 预览 / 部署&lt;/strong&gt; 一个站点能以毫秒记。&lt;/p&gt;
