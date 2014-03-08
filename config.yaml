@@ -4,7 +4,7 @@ indexes:
 permalinks:
   landing: /:slug
   blog: /:year/:month/:slug/
-baseurl: http://ktmud.github.com/huggle
+baseurl: http://ktmud.github.io/huggle/
 title: Huggle.
 params:
   analytics: 'UA-1080811-19'  
