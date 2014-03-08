@@ -30,4 +30,5 @@ gh-pages: publish
 	@rm -rf /tmp/huggle-site
 	git add .
 	@echo ""
-	@echo "Done. Use \"git status\" to see what has changed."
+	@echo "Done. Use \"git diff HEAD\" to see what has changed."
+	@echo ""
