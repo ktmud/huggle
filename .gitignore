@@ -20,6 +20,9 @@ TODO.md
 
 node_modules
 bower_components
+_gh_pages
+template
+static
 public
 temp
 tmp

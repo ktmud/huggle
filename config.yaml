@@ -1,4 +1,5 @@
 ---
+layoutdir: "template/layouts"
 indexes:
   tag: tags
 permalinks:

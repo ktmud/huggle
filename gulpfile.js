@@ -1,11 +1,11 @@
 var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
-var plugins = require("gulp-load-plugins")();
+var plugins = require('gulp-load-plugins')()
 
 var src = {
   bower: ['bower.json', '.bowerrc'],
-  styles: ['assets/styles/**/*'],
-  scripts: ['assets/**/*.coffee', 'assets/**/*.js'],
+  styles: ['template/assets/styles/**/*.(css|scss)'],
+  scripts: ['template/assets/**/*.(js|coffee)'],
   // The entry point of a browserify bundle
   // add as many bundles as you wish
   main: 'assets/app.coffee',

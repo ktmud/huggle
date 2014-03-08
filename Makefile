@@ -7,6 +7,7 @@ server:
 init:
 	npm install
 	bower install
+	cp -ri themes/default/ ./template
 
 clean:
 	rm -rf public
@@ -16,8 +17,8 @@ publish:
 	hugo
 
 gh-pages: publish
-	@rm -rf /tmp/huggle-site
-	@mv public /tmp/huggle-site
+	@rm -rf ./_gh_pages
+	@mv public ./_gh_pages
 	@echo "Stashing current branch changes..."
 	git add .
 	git stash
@@ -26,8 +27,8 @@ gh-pages: publish
 	@echo "Clean existing files..."
 	@echo ""
 	@git rm -rf "*"
-	@cp -Rvf /tmp/huggle-site/ ./
-	@rm -rf /tmp/huggle-site
+	@mv -Rvf `ls -A ./_gh_pages/*` ./
+	@rm -rf ./_gh_pages
 	git add .
 	@echo ""
 	@echo "Done. Use \"git diff HEAD\" to see what has changed."
