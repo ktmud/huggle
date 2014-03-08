@@ -15,7 +15,7 @@ Ships with a simplistic theme.
 1. [Install hugo](http://hugo.spf13.com/overview/installing) //
    Long story short: [download the binary](https://github.com/spf13/hugo/releases)
 1. Fork and clone [this repo](https://github.com/ktmud/huggle)
-1. `npm install`
+1. `make init`
 1. Create a `your-post.md` under `content/posts/` and edit it
 1. `make server` to see the result
 
