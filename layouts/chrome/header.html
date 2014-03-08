@@ -1,5 +1,12 @@
 <header id="header">
   <div class="container">
-    <a class="navbar-brandh" href="/">Home</a>
+    <a class="go-home" href="{{ .Site.BaseUrl }}/{{ .Params.lang }}">Home</a>
+    {{ if .Params.otherlangs }}
+      <p class="pull-right">
+      {{ range $index, $lang := .Params.otherlangs }}
+        <a href="{{ $.Site.BaseUrl }}/{{or (echoParam $.Params.otherslugs $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
+      {{ end }}
+      </p>
+    {{ end }}
   </div>
 </header>

@@ -1,0 +1,39 @@
+@import "variables";
+
+code {
+  color: $code_highlight;
+  padding: 3px 6px;
+  border-radius: 2px;
+  background: lighten($code_highlight, 51%);
+}
+
+pre {
+  border-radius: 4px;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  margin-bottom: 1.2em;
+}
+p + pre[class*="language-"] {
+  margin-top: -0.2em;
+}
+
+// For pygments highlight
+.highlight {
+  border-radius: 3px;
+  padding: 12px;
+  margin-bottom: 1em;
+  pre {
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #998;
+    font-size: 1.2em;
+    border: 0;
+    line-height: 1.2;
+  }
+}
+
+.token.delimiter {
+  color: #bbb;
+}

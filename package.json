@@ -17,7 +17,7 @@
     "gulpjs"
   ],
   "author": "ktmud <kissmud@gmail.com>",
-  "license": "MIT",
+  "license": "SimPL",
   "bugs": {
     "url": "https://github.com/ktmud/hugulp/issues"
   },
@@ -36,6 +36,9 @@
     "batch-stream2": "^0.1.3",
     "gulp-watch": "^0.5.0",
     "coffeeify": "^0.6.0",
-    "gulp-plumber": "^0.5.6"
+    "gulp-plumber": "^0.5.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-cached": "0.0.3",
+    "gulp-load-plugins": "^0.4.0"
   }
 }

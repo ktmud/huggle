@@ -30,4 +30,4 @@ Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp
 
 ## License
 
-the MIT license.
+https://tldrlegal.com/license/simple-public-license-2.0-(simpl)

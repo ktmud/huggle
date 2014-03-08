@@ -1,8 +1,17 @@
 ---
 indexes:
-  tag: 'tags'
+  tag: tags
 permalinks:
-  posts: /:slug/
-baseurl: 'http://ktmud.github.com/huggle/'
-title: 'Huggle.'
+  landing: /:slug
+  blog: /:year/:month/:slug/
+baseurl: http://ktmud.github.com/huggle
+title: Huggle.
+params:
+  analytics: 'UA-1080811-19'  
+  copyright: "Copyright &copy; 2014 Jesse Yang."
+  author: Jesse Yang
+  lang: en  # default language of your site
+  languages:
+    en: English
+    zh: 中文
 ...

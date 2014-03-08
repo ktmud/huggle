@@ -1,20 +1,10 @@
 var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
-var uglify = require('gulp-uglify')
-var cssmin = require('gulp-minify-css')
-var bower = require('gulp-bower-files')
-var stylus = require('gulp-stylus')
-var concat = require('gulp-concat')
-var rename = require('gulp-rename')
-var browserify = require('gulp-browserify')
-var gulpFilter = require('gulp-filter')
-var watch = require('gulp-watch')
-var plumber = require('gulp-plumber')
-var livereload = require('gulp-livereload')
+var plugins = require("gulp-load-plugins")();
 
 var src = {
   bower: ['bower.json', '.bowerrc'],
-  styles: ['assets/styles/**/*.css', 'assets/styles/**/*.styl'],
+  styles: ['assets/styles/**/*'],
   scripts: ['assets/**/*.coffee', 'assets/**/*.js'],
   // The entry point of a browserify bundle
   // add as many bundles as you wish
@@ -35,18 +25,18 @@ var debug = true
 // rename fonts to `fonts/*.*`
 //
 gulp.task('bower', function() {
-  var jsFilter = gulpFilter('**/*.js')
-  var cssFilter = gulpFilter('**/*.css')
-  return bower()
+  var jsFilter = plugins.filter('**/*.js')
+  var cssFilter = plugins.filter('**/*.css')
+  return plugins.bowerFiles()
     .pipe(jsFilter)
-    .pipe(concat('vendor.js'))
+    .pipe(plugins.concat('vendor.js')) // bower components js goes to vendor.js
     .pipe(gulp.dest(dist.js))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe(concat('vendor.css'))
+    .pipe(plugins.concat('vendor.css')) // css goes to vendor.css
     .pipe(gulp.dest(dist.css))
     .pipe(cssFilter.restore())
-    .pipe(rename(function(path) {
+    .pipe(plugins.rename(function(path) {
       if (~path.dirname.indexOf('fonts')) {
         path.dirname = '/fonts'
       }
@@ -57,21 +47,23 @@ gulp.task('bower', function() {
 function buildCSS() {
   // all css goes to one file
   return gulp.src(src.styles)
-    .pipe(plumber())
-    .pipe(stylus({use: ['nib']}))
-    .pipe(concat('app.css'))
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass({
+      sourceComments: debug ? 'map' : false
+    }))
+    .pipe(plugins.concat('app.css'))
     .pipe(gulp.dest(dist.css))
 }
 
 function buildJS() {
   return gulp.src(src.main, { read: false })
-    .pipe(plumber())
-    .pipe(browserify({
+    .pipe(plugins.plumber())
+    .pipe(plugins.browserify({
       transform: ['coffeeify'],
       extensions: ['.coffee'],
       debug: debug
     }))
-    .pipe(rename(function(file) {
+    .pipe(plugins.rename(function(file) {
       file.extname = '.js'
     }))
     .pipe(gulp.dest(dist.js))
@@ -79,6 +71,58 @@ function buildJS() {
 
 gulp.task('css', buildCSS)
 gulp.task('js', buildJS)
+
+
+gulp.task('watch', function() {
+  gulp.watch(src.bower, ['bower'])
+  plugins.watch({ glob: src.styles, name: 'styles' }, delayed(buildCSS))
+  plugins.watch({ glob: src.scripts, name: 'scripts' }, delayed(buildJS))
+})
+//
+// live reload can emit changes only when at lease one build is done
+//
+gulp.task('livereload', ['bower', 'css', 'js', 'watch'], function() {
+  var server = plugins.livereload()
+  // in case a lot of files changed during a short time
+  var batch = new BatchStream({ timeout: 50 })
+  gulp.watch(dist.all).on('change', function change(file) {
+    // clear directories
+    var urlpath = file.path.replace(__dirname + '/' + publishdir, '')
+    // also clear the tailing index.html
+    // so we can notify livereload.js the right path of files changed
+    urlpath = urlpath.replace('/index.html', '/')
+    batch.write(urlpath)
+  })
+  batch.on('data', function(files) {
+    server.changed(files.join(','))
+  })
+})
+
+// development
+gulp.task('default', ['bower', 'css', 'js', 'livereload'])
+
+gulp.task('compress-css', ['css'], function() {
+  return gulp.src(dist.css)
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest(dist.css))
+})
+
+gulp.task('compress-js', ['js'], function() {
+  return gulp.src(dist.js)
+    .pipe(plugins.uglify())
+    .pipe(gulp.dest(dist.js))
+})
+
+gulp.task('nodebug', function() {
+  // set debug to false,
+  // then browserify will not output sourcemap
+  debug = false
+})
+
+gulp.task('compress', ['compress-css', 'compress-js'])
+
+// build for production
+gulp.task('build', ['nodebug', 'bower', 'compress'])
 
 
 function delayed(fn, time) {
@@ -94,46 +138,3 @@ function delayed(fn, time) {
     }, time || 50)
   }
 }
-
-gulp.task('watch', function() {
-  gulp.watch(src.bower, ['bower'])
-  watch({ glob: src.styles, name: 'styles' }, delayed(buildCSS))
-  watch({ glob: src.scripts, name: 'scripts' }, delayed(buildJS))
-})
-//
-// live reload can emit changes only when at lease one build is done
-//
-gulp.task('livereload', ['bower', 'css', 'js', 'watch'], function() {
-  var server = livereload()
-  var batch = new BatchStream({ timeout: 50 })
-  gulp.watch(dist.all).on('change', function change(file) {
-    // clear directories
-    var urlpath = file.path.replace(__dirname + '/' + publishdir, '')
-    // also clear the tailing index.html
-    urlpath = urlpath.replace('/index.html', '/')
-    batch.write(urlpath)
-  })
-  batch.on('data', function(files) {
-    server.changed(files.join(','))
-  })
-})
-gulp.task('compress-css', ['css'], function() {
-  return gulp.src(dist.css)
-    .pipe(cssmin())
-    .pipe(gulp.dest(dist.css))
-})
-gulp.task('compress-js', ['js'], function() {
-  return gulp.src(dist.js)
-    .pipe(uglify())
-    .pipe(gulp.dest(dist.js))
-})
-gulp.task('compress', ['compress-css', 'compress-js'])
-
-gulp.task('default', ['bower', 'css', 'js', 'livereload']) // development
-
-gulp.task('nodebug', function() {
-  // set debug to false,
-  // then browserify will not output sourcemap
-  debug = false
-})
-gulp.task('build', ['nodebug', 'bower', 'compress']) // build for production
