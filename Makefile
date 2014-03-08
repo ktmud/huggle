@@ -27,7 +27,7 @@ gh-pages: build
 	@echo "Clean existing files..."
 	@echo ""
 	@git rm -rf "*"
-	@mv -Rvf `ls -A ./_gh_pages/*` ./
+	@mv -vf `ls -A ./_gh_pages/*` ./
 	@rm -rf ./_gh_pages
 	git add .
 	@echo ""
