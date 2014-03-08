@@ -22,9 +22,8 @@ Ships with a simplistic theme.
 ## Directories
 
 - **content** is your post contents written in Markdown.
-- **layouts** are html templates of your site.
-- **assets** is the source of your css/js files, i.e. `*.coffee` and `*.styl`.
 - **static** files in it will be copied directly into `/public`
+- **themes** Will be copied to "templates"
 
 Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp.js](http://gulpjs.com/).
 
