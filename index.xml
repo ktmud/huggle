@@ -119,46 +119,48 @@ Remember, you can only use double quote for strings.&lt;/p&gt;
 
 &lt;p&gt;你可以使用完全基于 NodeJS 和 Grunt.js 生态的 &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt; ，可惜就是太慢了。&lt;/p&gt;
 
-&lt;p&gt;既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。所以有了 &lt;strong&gt;Huggle&lt;/strong&gt; ，
-把同样速度巨快的流模式前端构建工具 &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; 与 Hugo 结合在一起，
-让你能享受闪电般开发、编辑、构建静态网站的快感。&lt;/p&gt;
+&lt;p&gt;既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。
+于是我们把同样拥有极速体验的流模式构建工具 &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; 与 Hugo 结合在一起，
+让你能免去一切等待，专心在开发模版和书写文章上。&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_1&#34;&gt;开始&lt;/h2&gt;
 
-&lt;p&gt;主要步骤就两步：&lt;/p&gt;
+&lt;p&gt;要开始使用 Huggle ，仅需两步：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;下载Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;克隆本仓库&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;下载到符合你系统版本的可执行文件后，需要添加到 $PATH 目录（&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;详细&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;步骤一中下载到的符合你系统版本的可执行文件，需要添加到 $PATH 目录（&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;详细&lt;/a&gt;）。&lt;/p&gt;
 
-&lt;p&gt;克隆好你自己的 Huggle 版本后，执行 &lt;code&gt;npm install &amp;amp;&amp;amp; make watch&lt;/code&gt; ，
-然后就开始在 &lt;code&gt;content/&lt;/code&gt; 目录下添加你自己的文章吧。&lt;/p&gt;
+&lt;p&gt;克隆好 Huggle 之后，执行 &lt;code&gt;npm install &amp;amp;&amp;amp; make watch&lt;/code&gt; ，
+即可在 &lt;code&gt;content/&lt;/code&gt; 目录下开始编辑你自己的文章。&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_2&#34;&gt;进阶&lt;/h2&gt;
 
 &lt;h3 id=&#34;toc_3&#34;&gt;改善开发体验&lt;/h3&gt;
 
-&lt;p&gt;相信我，一旦习惯这些流氓的用法后，就再也回不去了：&lt;/p&gt;
+&lt;p&gt;Huggle 打包了大量流行的开发者福利：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;安装 &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;
-，打开预览网站后点一下 livereload 图标，保存文件浏览器将自动刷新&lt;/li&gt;
-&lt;li&gt;此项目已配置了 &lt;a href=&#34;http://browserify.org/&#34;&gt;browserfy&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/substack/coffeeify&#34;&gt;coffeeify&lt;/a&gt; ，
+，打开预览网站后点一下其图标，保存文件浏览器将自动刷新&lt;/li&gt;
+&lt;li&gt;此项目已预置 &lt;a href=&#34;http://browserify.org/&#34;&gt;browserfy&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/substack/coffeeify&#34;&gt;coffeeify&lt;/a&gt; ，
 你可以在 &lt;code&gt;./assets&lt;/code&gt; 目录按照 nodejs 的 &lt;code&gt;require&lt;/code&gt; 用法来书写浏览器脚本。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;./assets/styles&lt;/code&gt; 目录是样式文件的源代码，所有目录结构都可以在 &lt;code&gt;gulpfile.js&lt;/code&gt; 里修改，
-你当然可以按照自己的习惯将 sass 换成你习惯的 less 或 stylus ，只需安装相应的 &lt;a href=&#34;http://gulpjs.com/plugins/&#34;&gt;gulp 插件&lt;/a&gt;即可。&lt;/li&gt;
+你也可以按照自己的习惯将 sass 换成习惯的 less 或 stylus ，只需安装相应的 &lt;a href=&#34;http://gulpjs.com/plugins/&#34;&gt;gulp 插件&lt;/a&gt;即可。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&#34;toc_4&#34;&gt;多语言支持&lt;/h3&gt;
 
+&lt;p&gt;Huggle 也搭建了使用 Hugo 实现多语言支持的样本。你只需：&lt;/p&gt;
+
 &lt;ol&gt;
 &lt;li&gt;在 &lt;code&gt;config.yaml&lt;/code&gt; 中设定你的默认语言&lt;/li&gt;
 &lt;li&gt;在 markdown 头部的 &lt;a href=&#34;http://hugo.spf13.com/content/front-matter&#34;&gt;front matter&lt;/a&gt; 里添加 &lt;code&gt;lang: zh&lt;/code&gt; 选项。标准语言代码可以参考&lt;a href=&#34;http://www.w3schools.com/tags/ref_language_codes.asp&#34;&gt;这里&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： &lt;code&gt;slug: zh/article-title-goes-hear&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果某篇文字有其他语言版本，添加 &lt;code&gt;otherlangs: [&amp;quot;en&amp;quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： &lt;code&gt;slug: /zh/article-title-goes-here&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果某篇文字有其他语言版本，添加 &lt;code&gt;otherlangs: [&amp;quot;en&amp;quot;]&lt;/code&gt; 和 &lt;code&gt;otherurls: [&amp;quot;/en/article-title&amp;quot;]&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;如本文的&lt;a href=&#34;https://raw.github.com/ktmud/huggle/master/content/intro.zh.md&#34;&gt;源码&lt;/a&gt;所示：&lt;/p&gt;
