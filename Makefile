@@ -1,20 +1,20 @@
 watch: clean
-	@gulp & hugo server --watch
-
-server:
-	@gulp build && hugo server
+	@gulp live & hugo server --watch
 
 init:
 	npm install
 	bower install
-	cp -ri themes/default/ ./template
+	ln -s themes/default ./template
 
 clean:
 	rm -rf public
 
-publish:
+build:
 	gulp build
 	hugo
+
+server:
+	@gulp build && hugo server
 
 gh-pages: publish
 	@rm -rf ./_gh_pages

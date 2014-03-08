@@ -43,39 +43,46 @@ Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具
 
 Huggle 打包了大量流行的开发者福利：
 
-1. 安装 [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
-   ，打开预览网站后点一下其图标，保存文件浏览器将自动刷新
-2. 此项目已预置 [browserfy](http://browserify.org/) 和 [coffeeify](https://github.com/substack/coffeeify) ，
-   你可以在 `./assets` 目录按照 nodejs 的 `require` 用法来书写浏览器脚本。
-3. `./assets/styles` 目录是样式文件的源代码，所有目录结构都可以在 `gulpfile.js` 里修改，
+1. 使用 [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)，
+   保存文件浏览器将自动刷新。得益于 Hugo 和 gulp.js 的极限速度，你甚至都还没来得及切换窗口，页面就已更新完毕。
+2. 使用 [browserfy](http://browserify.org/) 和 [coffeeify](https://github.com/substack/coffeeify) ，
+   你可以在 `./template/assets` 目录按照 nodejs 的 `require` 用法来书写浏览器脚本。
+3. `./template/assets/styles` 目录是样式文件的源代码，所有目录结构都可以在 `gulpfile.js` 里修改，
    你也可以按照自己的习惯将 sass 换成习惯的 less 或 stylus ，只需安装相应的 [gulp 插件](http://gulpjs.com/plugins/)即可。
 
 
 ### 多语言支持
 
-Huggle 也搭建了使用 Hugo 实现多语言支持的样本。你只需：
+通过添加一些自定义参数，以及按条理组织 Url ，你可以利用 Hugo 轻松搭建多语言网站：
 
 1. 在 `config.yaml` 中设定你的默认语言
-2. 在 markdown 头部的 [front matter](http://hugo.spf13.com/content/front-matter) 里添加 `lang: zh` 选项。标准语言代码可以参考[这里](http://www.w3schools.com/tags/ref_language_codes.asp)。
-3. 如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： `slug: /zh/article-title-goes-here`
-4. 如果某篇文字有其他语言版本，添加 `otherlangs: ["en"]` 和 `otherurls: ["/en/article-title"]`
+2. 在 markdown 头部的 [front matter](http://hugo.spf13.com/content/front-matter) 里添加 `lang: zh` 参数。标准语言代码可以参考[这里](http://www.w3schools.com/tags/ref_language_codes.asp)。
+3. 为了将某一语言的文件都组织在同一目录下，指定文档网址： `slug: /zh/article-title-goes-here`
+4. 指定此文章其他语言版本的链接：
 
-如本文的[源码](https://raw.github.com/ktmud/huggle/master/content/intro.zh.md)所示：
+    ```yaml
+    otherlangs: ["en"]
+    otherurls: ["/en/article-title"]
+    ```
+
+
+如本文[源码所示](https://raw.github.com/ktmud/huggle/master/content/intro.zh.md)：
 
 ```yaml
 ---
 title: Hugo + gulp.js = Huggle.
 subtitle: 速度极快的静态网站构建工具
 date: 2014-03-04
+slug: zh/intro/
+
 lang: zh
 otherlangs: ["en"]
-otherslugs: ["intro"]
-slug: zh/intro
+otherurls: ["/intro/"]
 ---
 ```
 
     
-### golang html/template 小贴士
+### golang text/template 小贴士
 
 除了 [Hugo文档](http://hugo.spf13.com/layout/go-templates) 里已经说明的以外，还有一些注意事项值得在此说明：
 

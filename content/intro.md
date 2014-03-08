@@ -62,7 +62,27 @@ When you are ready to publish your site, use `make gh-pages`.
 
 Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp.js](http://gulpjs.com/).
 
-## Trouble shooting
+## Dive in
+
+### Syntax Highlighting
+
+Hugo comes with a built in Syntax Highlighting support, based on [pygments](http://pygments.org/).
+To maximize the build speed, [Prism.js](http://prismjs.com/) is used by Huggle, so you can just write Github flavored
+code block, then render syntax highlighting on the client side.
+
+<pre class="language-markdown">
+```javascript
+console.log("Give me a Huggle!")
+```
+</pre>
+
+The output:
+
+```javascript
+console.log("Give me a Huggle!")
+```
+
+### Trouble shooting
 
 #### Rendering error: html/template: "xxx.html" is an incomplete template
 

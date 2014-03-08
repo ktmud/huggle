@@ -2,13 +2,14 @@ var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
 var plugins = require('gulp-load-plugins')()
 
+var sourcedir = "template/assets"
 var src = {
   bower: ['bower.json', '.bowerrc'],
-  styles: ['template/assets/styles/**/*.(css|scss)'],
-  scripts: ['template/assets/**/*.(js|coffee)'],
+  styles: [sourcedir + '/styles/**/*.+(css|scss)'],
+  scripts: [sourcedir + '/**/*.+(js|coffee)'],
   // The entry point of a browserify bundle
   // add as many bundles as you wish
-  main: 'assets/app.coffee',
+  main: sourcedir + '/app.coffee',
 }
 var publishdir = 'public'
 var dist = {
@@ -73,7 +74,7 @@ gulp.task('css', buildCSS)
 gulp.task('js', buildJS)
 
 
-gulp.task('watch', function() {
+gulp.task('watch', ['bower', 'css', 'js'], function() {
   gulp.watch(src.bower, ['bower'])
   plugins.watch({ glob: src.styles, name: 'styles' }, delayed(buildCSS))
   plugins.watch({ glob: src.scripts, name: 'scripts' }, delayed(buildJS))
@@ -81,7 +82,7 @@ gulp.task('watch', function() {
 //
 // live reload can emit changes only when at lease one build is done
 //
-gulp.task('livereload', ['bower', 'css', 'js', 'watch'], function() {
+gulp.task('live', ['watch'], function() {
   var server = plugins.livereload()
   // in case a lot of files changed during a short time
   var batch = new BatchStream({ timeout: 50 })
@@ -97,9 +98,6 @@ gulp.task('livereload', ['bower', 'css', 'js', 'watch'], function() {
     server.changed(files.join(','))
   })
 })
-
-// development
-gulp.task('default', ['bower', 'css', 'js', 'livereload'])
 
 gulp.task('compress-css', ['css'], function() {
   return gulp.src(dist.css)
@@ -119,11 +117,12 @@ gulp.task('nodebug', function() {
   debug = false
 })
 
-gulp.task('compress', ['compress-css', 'compress-js'])
-
 // build for production
+gulp.task('compress', ['compress-css', 'compress-js'])
 gulp.task('build', ['nodebug', 'bower', 'compress'])
 
+// default task is build
+gulp.task('default', ['build'])
 
 function delayed(fn, time) {
   var t
