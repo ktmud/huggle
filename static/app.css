@@ -1,83 +1,103 @@
-.home .slogan {
-  font-size: 20px;
-  margin: 1em 0;
-}
-.home .intro {
-  margin: 2em 0;
-  font-size: 16px;
-}
-.home hr {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
+.btn {
+  border-radius: 2px; }
 
-.absmiddle {
-  margin: 10% auto;
-  max-width: 600px;
-}
-#header {
-  margin: 30px 0 20px;
-}
-#footer {
-  color: #aaa;
-  padding: 60px 0 30px;
-}
-.layout-single #footer {
-  text-align: center;
-}
-#disqus_thread {
-  margin-top: 60px;
-}
+code {
+  color: #c92239;
+  padding: 3px 6px;
+  border-radius: 2px;
+  background: #fdf2f4; }
+
+pre {
+  border-radius: 4px; }
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  margin-bottom: 1.2em; }
+
+p + pre[class*="language-"] {
+  margin-top: -0.2em; }
 
 .highlight {
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 12px;
-  margin-bottom: 1em;
-}
-.highlight pre {
-  margin: 0;
-  padding: 0;
-  background: none;
-  color: inherit;
-  font-size: 1.2em;
-  border: 0;
-  line-height: 1.2;
-}
-.btn {
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
+  margin-bottom: 1em; }
+  .highlight pre {
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #998;
+    font-size: 1.2em;
+    border: 0;
+    line-height: 1.2; }
+
+.token.delimiter {
+  color: #bbb; }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff) format('woff'); }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff) format('woff'); }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Merriweather Italic'), local('Merriweather-Italic'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/So5lHxHT37p2SS4-t60SlL52ooqJRs02xO3mONBoqeI.woff) format('woff'); }
 
 body {
-  font-family: 'Merriweather', 'Lora', serif;
-}
+  font-family: 'Merriweather', 'Lora', serif; }
+
 .subtitle {
   font-size: 1.5em;
-  color: #666;
-}
+  color: #666; }
+
 .heading {
   margin-bottom: 30px;
   padding-bottom: 0.5em;
-  border-bottom: 1px solid #eee;
-}
+  border-bottom: 1px solid #eee; }
+
 .readable {
   margin-bottom: 60px;
-}
-p,
-ul,
-ol {
-  margin-bottom: 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin-bottom: 0.5em;
-}
-h2,
-h3,
-h4 {
-  margin-top: 1em;
-}
+  line-height: 1.75em; }
+
+p, ul, ol {
+  margin-bottom: 1em; }
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0.7em; }
+
+h2, h3, h4 {
+  margin-top: 1.2em; }
+
+.absmiddle {
+  margin: 10% auto;
+  max-width: 600px; }
+
+#header {
+  margin: 30px 0 20px; }
+
+#footer {
+  color: #999;
+  padding: 60px 0 30px;
+  font-size: 13px; }
+  .layout-single #footer {
+    text-align: center; }
+
+#disqus_thread {
+  margin-top: 60px; }
+
+.home .slogan {
+  font-size: 20px;
+  margin: 1em 0; }
+.home .intro {
+  margin: 2em 0;
+  font-size: 16px; }
+.home hr {
+  margin-bottom: 30px;
+  margin-top: 30px; }

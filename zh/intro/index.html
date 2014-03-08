@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Hugo &#43; gulp.js = Huggle.</title>
+  <link rel="canonical" href="http://ktmud.github.com/huggle/zh/intro">
+<link rel="stylesheet" href="http://ktmud.github.com/huggle/static/vendor.css">
+<link rel="stylesheet" href="http://ktmud.github.com/huggle/static/app.css">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1080811-19', 'ktmud.github.io');
+    ga('send', 'pageview');
+  </script>
+
+
+
+
+</head>
+<body>
+  <header id="header">
+  <div class="container">
+    <a class="go-home" href="http://ktmud.github.com/huggle//zh">Home</a>
+    
+      <p class="pull-right">
+      
+        <a href="http://ktmud.github.com/huggle//intro">English</a>
+      
+      </p>
+    
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-10">
+
+
+<article class="readable">
+  <div class="heading">
+    <h1>Hugo &#43; gulp.js = Huggle.</h1>
+    
+      <p class="subtitle">速度极快的静态网站构建工具</p>
+    
+  </div>
+  
+
+<h2 id="toc_0">什么是 Huggle ？</h2>
+
+<p>Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具的一个示范，
+目标是帮助你<strong>更快速地构建静态网站</strong>，如个人博客、公司/项目主页、作品集网站等。</p>
+
+<p><a href="http://hugo.spf13.com/">Hugo</a> 是用 Go 语言编写的静态页面生成工具，
+与 <a href="http://jekyllrb.com/">jekyll</a> 等工具类似。Hugo 的最大特点就是快，构建一个包含 200+ 篇文章的博客，
+只需要几秒钟。对于如何生成页面，它提供了大量既符合直觉又相当灵活的自定义选项，
+但对喜欢自己编写网站模版样式的设计师和前端工程师来说，使用 Hugo 还有一点障碍 —— css/js 的打包工具仍需单独配置。</p>
+
+<p>你可以使用完全基于 NodeJS 和 Grunt.js 生态的 <a href="http://assemble.io/">Assemble</a> ，可惜就是太慢了。</p>
+
+<p>既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。所以有了 <strong>Huggle</strong> ，
+把同样速度巨快的流模式前端构建工具 <a href="http://gulpjs.com/">gulp.js</a> 与 Hugo 结合在一起，
+让你能享受闪电般开发、编辑、构建静态网站的快感。</p>
+
+<h2 id="toc_1">开始</h2>
+
+<p>主要步骤就两步：</p>
+
+<ol>
+<li><a href="https://github.com/spf13/hugo/releases">下载Hugo</a></li>
+<li><a href="https://github.com/ktmud/huggle">克隆本仓库</a></li>
+</ol>
+
+<p>下载到符合你系统版本的可执行文件后，需要添加到 $PATH 目录（<a href="http://hugo.spf13.com/overview/installing">详细</a>）。</p>
+
+<p>克隆好你自己的 Huggle 版本后，执行 <code>npm install &amp;&amp; make watch</code> ，
+然后就开始在 <code>content/</code> 目录下添加你自己的文章吧。</p>
+
+<h2 id="toc_2">进阶</h2>
+
+<h3 id="toc_3">改善开发体验</h3>
+
+<p>相信我，一旦习惯这些流氓的用法后，就再也回不去了：</p>
+
+<ol>
+<li>安装 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">livereload</a>
+，打开预览网站后点一下 livereload 图标，保存文件浏览器将自动刷新</li>
+<li>此项目已配置了 <a href="http://browserify.org/">browserfy</a> 和 <a href="https://github.com/substack/coffeeify">coffeeify</a> ，
+你可以在 <code>./assets</code> 目录按照 nodejs 的 <code>require</code> 用法来书写浏览器脚本。</li>
+<li><code>./assets/styles</code> 目录是样式文件的源代码，所有目录结构都可以在 <code>gulpfile.js</code> 里修改，
+你当然可以按照自己的习惯将 sass 换成你习惯的 less 或 stylus ，只需安装相应的 <a href="http://gulpjs.com/plugins/">gulp 插件</a>即可。</li>
+</ol>
+
+<h3 id="toc_4">多语言支持</h3>
+
+<ol>
+<li>在 <code>config.yaml</code> 中设定你的默认语言</li>
+<li>在 markdown 头部的 <a href="http://hugo.spf13.com/content/front-matter">front matter</a> 里添加 <code>lang: zh</code> 选项。标准语言代码可以参考<a href="http://www.w3schools.com/tags/ref_language_codes.asp">这里</a>。</li>
+<li>如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： <code>slug: zh/article-title-goes-hear</code></li>
+<li>如果某篇文字有其他语言版本，添加 <code>otherlangs: [&quot;en&quot;]</code></li>
+</ol>
+
+<p>如本文的<a href="https://raw.github.com/ktmud/huggle/master/content/intro.zh.md">源码</a>所示：</p>
+
+<pre><code class="yaml">---
+title: Hugo + gulp.js = Huggle.
+subtitle: 速度极快的静态网站构建工具
+date: 2014-03-04
+lang: zh
+otherlangs: [&quot;en&quot;]
+otherslugs: [&quot;intro&quot;]
+slug: zh/intro
+---
+</code></pre>
+
+<h3 id="toc_5">golang html/template 小贴士</h3>
+
+<p>除了 <a href="http://hugo.spf13.com/layout/go-templates">Hugo文档</a> 里已经说明的以外，还有一些注意事项值得在此说明：</p>
+
+<ol>
+<li>模版语句内的字符串实体必须用双引号</li>
+<li>双括弧两边继续留有空格</li>
+</ol>
+
+<p>因此，对于语句：</p>
+
+<pre><code class="gotmpl">{{ template &quot;chrome/includes.html&quot; . }}
+</code></pre>
+
+<p>双引号（<code>&quot;</code>）不能写作单引号，<code>.</code> 后面的空格也不能省略。</p>
+
+<h3 id="toc_6">条件判断</h3>
+
+<p>如果不等于：</p>
+
+<pre><code class="gotmpl">{{ if ne .Url &quot;/&quot; }}
+  &lt;a href=&quot;{{ .Site.BaseUrl }}&quot;&gt;Back Home&lt;/a&gt;
+{{ end }}
+</code></pre>
+
+<p>或者</p>
+
+<pre><code class="gotmpl">{{ if not (eq .Url &quot;/&quot;) }}
+  &lt;a href=&quot;{{ .Site.BaseUrl }}&quot;&gt;Back Home&lt;/a&gt;
+{{ end }}
+</code></pre>
+
+<p>两个条件：</p>
+
+<pre><code class="gotmpl">{{ if or (ne .Url &quot;/&quot;) (ne .Url &quot;/en/&quot;) }}
+  &lt;a href=&quot;{{ .Site.BaseUrl }}&quot;&gt;Back Home&lt;/a&gt;
+{{ end }}
+</code></pre>
+
+<p>没有 <code>unless</code> ，但是可以 <code>if not</code> ，更多指南请参考 <a href="http://golang.org/pkg/text/template/">golang 文档</a>。</p>
+
+<h3 id="toc_7">Context 和循环枚举</h3>
+
+<p>设 <code>.Params.tags</code> 为一个数组：<code>['标签1', '标签2']</code></p>
+
+<pre><code class="gotmpl">{{ range .Params.tags }}
+  &lt;a href=&quot;{{ $.Site.Params.baseurl }}tag/{{ . }}&quot;&gt;{{ . }}&lt;/a&gt;
+{{ end }}
+</code></pre>
+
+<p>注意你可以使用 <code>{{ $.OuterValue }}</code> 获取一个 Context 外部的变量(<a href="http://stackoverflow.com/questions/14800204/in-a-template-how-do-you-access-an-outer-scope-while-inside-of-a-with-or-rang">via</a>)。</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'huggle';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+        <footer id="footer">
+
+  Copyright &copy; 2014 Jesse Yang.
+
+&nbsp;Powered by <a href="https://github.com/ktmud/huggle">Huggle</a>
+</footer>
+<script src="http://ktmud.github.com/huggle/static/vendor.js"></script>
+<script src="http://ktmud.github.com/huggle/static/app.js"></script>
+
+       </div>
+    </div>
+  </div>
+</body>
+</html>
+
