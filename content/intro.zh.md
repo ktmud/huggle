@@ -1,7 +1,7 @@
 ---
 title: Hugo + gulp.js = Huggle.
 subtitle: 速度极快的静态网站构建工具
-date: 2014-03-04
+date: 2014-03-08T16:59:35+08:00
 slug: zh/intro/
 
 lang: zh
@@ -78,7 +78,6 @@ otherlangs: ["en"]
 otherurls: ["/intro/"]
 ---
 ```
-
     
 ### golang text/template 小贴士
 
