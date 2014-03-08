@@ -16,7 +16,7 @@ build:
 server:
 	@gulp build && hugo server
 
-gh-pages: publish
+gh-pages: build
 	@rm -rf ./_gh_pages
 	@mv public ./_gh_pages
 	@echo "Stashing current branch changes..."
