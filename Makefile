@@ -33,3 +33,8 @@ gh-pages: build
 	@echo ""
 	@echo "Done. Use \"git diff HEAD\" to see what has changed."
 	@echo ""
+
+deploy: gh-pages
+	git commit -am 'update'
+	git push
+	git checkout -
