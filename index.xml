@@ -19,38 +19,29 @@
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is not a new tool, it&amp;rsquo;s just an demonstation of how to integrate
+&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is not an independent tool, it&amp;rsquo;s just a demonstation of how to integrate
 &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is a fast and flexible static site generator written in Go.
 It does an amazing job in organizing, templating and building contents.
 &lt;strong&gt;Gulp.js&lt;/strong&gt; is a streaming build system (mostly) for front-end code, which is also very fast.&lt;/p&gt;
 
-&lt;p&gt;You may be familiar with &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;, or &lt;a href=&#34;http://middlemanapp.com&#34;&gt;MiddleMan&lt;/a&gt;, etc.
-Well, Hugo does the same thing, but much faster. And for manage the JavaScript/CSS code in brower,
-there are also plenty of solutions in the market,
-which designers and front-end developers may find quite familiar with:&lt;/p&gt;
+&lt;p&gt;Huggle to Hugo, is much like &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; to &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;.
+But with the ability to reuse what NodeJS compunity has created.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;      - The most well-known JavaScript task runner&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://brunch.io/&#34;&gt;Brunch&lt;/a&gt;       - An all-in-one toolset emphasized on building rich HTML5 apps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;     - The streaming build system&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://yeoman.io/&#34;&gt;Yeoman&lt;/a&gt;       - Modern webapp scaffolding tool&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Actually, there is a Huggle equivalent in pure NodeJS, called &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;,
+which run itself as a grunt plugin. It provides highly customizable configure options,
+and a seamless integration with many existing Grunt plugins. Unfortunately, it&amp;rsquo;s just not fast enough.
+To me, the &lt;code&gt;Gruntfile.js&lt;/code&gt; is not as readable as &lt;code&gt;gulpfile.js&lt;/code&gt;, too.&lt;/p&gt;
 
-&lt;p&gt;Actually, there is alreay an all-in-one static site building tool, called &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;,
-which runs as a grunt plugin. It provides highly customizable configure options,
-and a seamless integration with existing Grunt plugins. Unfortunately, it&amp;rsquo;s just not fast enough,
-and with all that big loads of tasks to run, the &lt;code&gt;gruntfile.js&lt;/code&gt; can be very hard to read and maintain.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s all about speed and ease, right? So here we are, trying to combine two useful tools,
-&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;, which are both designed to be
+&lt;p&gt;To gain more speed and ease, I choose to use
+&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; with &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;. The two are both designed to be
 the fastest of its kind.&lt;/p&gt;
 
-&lt;p&gt;By running the two tasks, &lt;strong&gt;generate html from organized markdowns&lt;/strong&gt; and
-&lt;strong&gt;build assets from programmable css/js&lt;/strong&gt;, seperately, we gain the maximum speed and flexibility.&lt;/p&gt;
+&lt;p&gt;By running two tasks &amp;ndash; &lt;strong&gt;generating html from organized markdowns&lt;/strong&gt; and
+&lt;strong&gt;building programmable css/js&lt;/strong&gt;, seperately, we gain the maximum speed and flexibility.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_1&#34;&gt;What can you get?&lt;/h3&gt;
+&lt;h3 id=&#34;toc_1&#34;&gt;What are the benefits?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Build a 200+ blogs site in seconds&lt;/li&gt;
@@ -59,6 +50,7 @@ the fastest of its kind.&lt;/p&gt;
 &lt;li&gt;Simple yet powerful golang html template, with partials and &lt;a href=&#34;http://hugo.spf13.com/extras/shortcodes&#34;&gt;shortcodes&lt;/a&gt; support&lt;/li&gt;
 &lt;li&gt;Write site UI in coffee/stylus/sass/less, anything you like&lt;/li&gt;
 &lt;li&gt;Write browser code like your are in node.js&lt;/li&gt;
+&lt;li&gt;Lightweight client site or pre-rendered syntax highlight&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;toc_2&#34;&gt;Quick start&lt;/h2&gt;
@@ -67,7 +59,7 @@ the fastest of its kind.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;Install hugo&lt;/a&gt; //
 Long story short: &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;download the binary&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Fork and clone &lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;this repo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make init&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Create a &lt;code&gt;your-post.md&lt;/code&gt; under &lt;code&gt;content/posts/&lt;/code&gt; and edit it&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make server&lt;/code&gt; to see the result&lt;/li&gt;
 &lt;/ol&gt;
@@ -84,9 +76,28 @@ Long story short: &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt
 
 &lt;p&gt;Also, don&amp;rsquo;t forget to look into docs on &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Trouble shooting&lt;/h2&gt;
+&lt;h2 id=&#34;toc_3&#34;&gt;Dive in&lt;/h2&gt;
 
-&lt;h4 id=&#34;toc_4&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
+&lt;h3 id=&#34;toc_4&#34;&gt;Syntax Highlighting&lt;/h3&gt;
+
+&lt;p&gt;Hugo comes with a built in Syntax Highlighting support, based on &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.
+To maximize the build speed, &lt;a href=&#34;http://prismjs.com/&#34;&gt;Prism.js&lt;/a&gt; is used by Huggle, so you can just write Github flavored
+code block, then render syntax highlighting on the client side.&lt;/p&gt;
+
+&lt;pre class=&#34;language-markdown&#34;&gt;
+```javascript
+console.log(&#34;Give me a Huggle!&#34;)
+```
+&lt;/pre&gt;
+
+&lt;p&gt;The output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;javascript&#34;&gt;console.log(&amp;quot;Give me a Huggle!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Trouble shooting&lt;/h3&gt;
+
+&lt;h4 id=&#34;toc_6&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
 
 &lt;p&gt;It is because there is grammer error in your golange html template.
 Remember, you can only use double quote for strings.&lt;/p&gt;
@@ -144,39 +155,45 @@ Remember, you can only use double quote for strings.&lt;/p&gt;
 &lt;p&gt;Huggle 打包了大量流行的开发者福利：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;安装 &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;
-，打开预览网站后点一下其图标，保存文件浏览器将自动刷新&lt;/li&gt;
-&lt;li&gt;此项目已预置 &lt;a href=&#34;http://browserify.org/&#34;&gt;browserfy&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/substack/coffeeify&#34;&gt;coffeeify&lt;/a&gt; ，
-你可以在 &lt;code&gt;./assets&lt;/code&gt; 目录按照 nodejs 的 &lt;code&gt;require&lt;/code&gt; 用法来书写浏览器脚本。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./assets/styles&lt;/code&gt; 目录是样式文件的源代码，所有目录结构都可以在 &lt;code&gt;gulpfile.js&lt;/code&gt; 里修改，
+&lt;li&gt;使用 &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;，
+保存文件浏览器将自动刷新。得益于 Hugo 和 gulp.js 的极限速度，你甚至都还没来得及切换窗口，页面就已更新完毕。&lt;/li&gt;
+&lt;li&gt;使用 &lt;a href=&#34;http://browserify.org/&#34;&gt;browserfy&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/substack/coffeeify&#34;&gt;coffeeify&lt;/a&gt; ，
+你可以在 &lt;code&gt;./template/assets&lt;/code&gt; 目录按照 nodejs 的 &lt;code&gt;require&lt;/code&gt; 用法来书写浏览器脚本。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./template/assets/styles&lt;/code&gt; 目录是样式文件的源代码，所有目录结构都可以在 &lt;code&gt;gulpfile.js&lt;/code&gt; 里修改，
 你也可以按照自己的习惯将 sass 换成习惯的 less 或 stylus ，只需安装相应的 &lt;a href=&#34;http://gulpjs.com/plugins/&#34;&gt;gulp 插件&lt;/a&gt;即可。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&#34;toc_4&#34;&gt;多语言支持&lt;/h3&gt;
 
-&lt;p&gt;Huggle 也搭建了使用 Hugo 实现多语言支持的样本。你只需：&lt;/p&gt;
+&lt;p&gt;通过添加一些自定义参数，以及按条理组织 Url ，你可以利用 Hugo 轻松搭建多语言网站：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;在 &lt;code&gt;config.yaml&lt;/code&gt; 中设定你的默认语言&lt;/li&gt;
-&lt;li&gt;在 markdown 头部的 &lt;a href=&#34;http://hugo.spf13.com/content/front-matter&#34;&gt;front matter&lt;/a&gt; 里添加 &lt;code&gt;lang: zh&lt;/code&gt; 选项。标准语言代码可以参考&lt;a href=&#34;http://www.w3schools.com/tags/ref_language_codes.asp&#34;&gt;这里&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;如果你想将某一语言的文件都组织在同一目录下，还可以配置文档网址： &lt;code&gt;slug: /zh/article-title-goes-here&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果某篇文字有其他语言版本，添加 &lt;code&gt;otherlangs: [&amp;quot;en&amp;quot;]&lt;/code&gt; 和 &lt;code&gt;otherurls: [&amp;quot;/en/article-title&amp;quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在 markdown 头部的 &lt;a href=&#34;http://hugo.spf13.com/content/front-matter&#34;&gt;front matter&lt;/a&gt; 里添加 &lt;code&gt;lang: zh&lt;/code&gt; 参数。标准语言代码可以参考&lt;a href=&#34;http://www.w3schools.com/tags/ref_language_codes.asp&#34;&gt;这里&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;为了将某一语言的文件都组织在同一目录下，指定文档网址： &lt;code&gt;slug: /zh/article-title-goes-here&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;指定此文章其他语言版本的链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;yaml&#34;&gt;otherlangs: [&amp;quot;en&amp;quot;]
+otherurls: [&amp;quot;/en/article-title&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;如本文的&lt;a href=&#34;https://raw.github.com/ktmud/huggle/master/content/intro.zh.md&#34;&gt;源码&lt;/a&gt;所示：&lt;/p&gt;
+&lt;p&gt;如本文&lt;a href=&#34;https://raw.github.com/ktmud/huggle/master/content/intro.zh.md&#34;&gt;源码所示&lt;/a&gt;：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;yaml&#34;&gt;---
 title: Hugo + gulp.js = Huggle.
 subtitle: 速度极快的静态网站构建工具
 date: 2014-03-04
+slug: zh/intro/
+
 lang: zh
 otherlangs: [&amp;quot;en&amp;quot;]
-otherslugs: [&amp;quot;intro&amp;quot;]
-slug: zh/intro
+otherurls: [&amp;quot;/intro/&amp;quot;]
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;toc_5&#34;&gt;golang html/template 小贴士&lt;/h3&gt;
+&lt;h3 id=&#34;toc_5&#34;&gt;golang text/template 小贴士&lt;/h3&gt;
 
 &lt;p&gt;除了 &lt;a href=&#34;http://hugo.spf13.com/layout/go-templates&#34;&gt;Hugo文档&lt;/a&gt; 里已经说明的以外，还有一些注意事项值得在此说明：&lt;/p&gt;
 

@@ -52,38 +52,29 @@
 
 <h2 id="toc_0">Introduction</h2>
 
-<p><strong>Huggle</strong> is not a new tool, it&rsquo;s just an demonstation of how to integrate
+<p><strong>Huggle</strong> is not an independent tool, it&rsquo;s just a demonstation of how to integrate
 <a href="http://hugo.spf13.com/">Hugo</a> + <a href="http://gulpjs.com/">gulp.js</a>.</p>
 
 <p><strong>Hugo</strong> is a fast and flexible static site generator written in Go.
 It does an amazing job in organizing, templating and building contents.
 <strong>Gulp.js</strong> is a streaming build system (mostly) for front-end code, which is also very fast.</p>
 
-<p>You may be familiar with <a href="http://jekyllrb.com/">jekyll</a>, or <a href="http://middlemanapp.com">MiddleMan</a>, etc.
-Well, Hugo does the same thing, but much faster. And for manage the JavaScript/CSS code in brower,
-there are also plenty of solutions in the market,
-which designers and front-end developers may find quite familiar with:</p>
+<p>Huggle to Hugo, is much like <a href="http://octopress.org/">Octopress</a> to <a href="http://jekyllrb.com/">jekyll</a>.
+But with the ability to reuse what NodeJS compunity has created.</p>
 
-<ul>
-<li><a href="http://gruntjs.com/">Grunt</a>      - The most well-known JavaScript task runner</li>
-<li><a href="http://brunch.io/">Brunch</a>       - An all-in-one toolset emphasized on building rich HTML5 apps</li>
-<li><a href="http://gulpjs.com/">gulp.js</a>     - The streaming build system</li>
-<li><a href="http://yeoman.io/">Yeoman</a>       - Modern webapp scaffolding tool</li>
-</ul>
+<p>Actually, there is a Huggle equivalent in pure NodeJS, called <a href="http://assemble.io/">Assemble</a>,
+which run itself as a grunt plugin. It provides highly customizable configure options,
+and a seamless integration with many existing Grunt plugins. Unfortunately, it&rsquo;s just not fast enough.
+To me, the <code>Gruntfile.js</code> is not as readable as <code>gulpfile.js</code>, too.</p>
 
-<p>Actually, there is alreay an all-in-one static site building tool, called <a href="http://assemble.io/">Assemble</a>,
-which runs as a grunt plugin. It provides highly customizable configure options,
-and a seamless integration with existing Grunt plugins. Unfortunately, it&rsquo;s just not fast enough,
-and with all that big loads of tasks to run, the <code>gruntfile.js</code> can be very hard to read and maintain.</p>
-
-<p>It&rsquo;s all about speed and ease, right? So here we are, trying to combine two useful tools,
-<a href="http://hugo.spf13.com/">Hugo</a> and <a href="http://gulpjs.com/">gulp.js</a>, which are both designed to be
+<p>To gain more speed and ease, I choose to use
+<a href="http://hugo.spf13.com/">Hugo</a> with <a href="http://gulpjs.com/">gulp.js</a>. The two are both designed to be
 the fastest of its kind.</p>
 
-<p>By running the two tasks, <strong>generate html from organized markdowns</strong> and
-<strong>build assets from programmable css/js</strong>, seperately, we gain the maximum speed and flexibility.</p>
+<p>By running two tasks &ndash; <strong>generating html from organized markdowns</strong> and
+<strong>building programmable css/js</strong>, seperately, we gain the maximum speed and flexibility.</p>
 
-<h3 id="toc_1">What can you get?</h3>
+<h3 id="toc_1">What are the benefits?</h3>
 
 <ul>
 <li>Build a 200+ blogs site in seconds</li>
@@ -92,6 +83,7 @@ the fastest of its kind.</p>
 <li>Simple yet powerful golang html template, with partials and <a href="http://hugo.spf13.com/extras/shortcodes">shortcodes</a> support</li>
 <li>Write site UI in coffee/stylus/sass/less, anything you like</li>
 <li>Write browser code like your are in node.js</li>
+<li>Lightweight client site or pre-rendered syntax highlight</li>
 </ul>
 
 <h2 id="toc_2">Quick start</h2>
@@ -100,7 +92,7 @@ the fastest of its kind.</p>
 <li><a href="http://hugo.spf13.com/overview/installing">Install hugo</a> //
 Long story short: <a href="https://github.com/spf13/hugo/releases">download the binary</a></li>
 <li>Fork and clone <a href="https://github.com/ktmud/huggle">this repo</a></li>
-<li><code>npm install</code></li>
+<li><code>make init</code></li>
 <li>Create a <code>your-post.md</code> under <code>content/posts/</code> and edit it</li>
 <li><code>make server</code> to see the result</li>
 </ol>
@@ -117,9 +109,28 @@ Long story short: <a href="https://github.com/spf13/hugo/releases">download the 
 
 <p>Also, don&rsquo;t forget to look into docs on <a href="http://hugo.spf13.com/">Hugo</a> and <a href="http://gulpjs.com/">gulp.js</a>.</p>
 
-<h2 id="toc_3">Trouble shooting</h2>
+<h2 id="toc_3">Dive in</h2>
 
-<h4 id="toc_4">Rendering error: html/template: &ldquo;xxx.html&rdquo; is an incomplete template</h4>
+<h3 id="toc_4">Syntax Highlighting</h3>
+
+<p>Hugo comes with a built in Syntax Highlighting support, based on <a href="http://pygments.org/">pygments</a>.
+To maximize the build speed, <a href="http://prismjs.com/">Prism.js</a> is used by Huggle, so you can just write Github flavored
+code block, then render syntax highlighting on the client side.</p>
+
+<pre class="language-markdown">
+```javascript
+console.log("Give me a Huggle!")
+```
+</pre>
+
+<p>The output:</p>
+
+<pre><code class="javascript">console.log(&quot;Give me a Huggle!&quot;)
+</code></pre>
+
+<h3 id="toc_5">Trouble shooting</h3>
+
+<h4 id="toc_6">Rendering error: html/template: &ldquo;xxx.html&rdquo; is an incomplete template</h4>
 
 <p>It is because there is grammer error in your golange html template.
 Remember, you can only use double quote for strings.</p>
