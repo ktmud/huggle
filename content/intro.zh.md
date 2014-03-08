@@ -19,23 +19,21 @@ Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具
 只需要几秒钟。对于如何生成页面，它提供了大量既符合直觉又相当灵活的自定义选项，
 但对喜欢自己编写网站模版样式的设计师和前端工程师来说，使用 Hugo 还有一点障碍 —— css/js 的打包工具仍需单独配置。
 
-你可以使用完全基于 NodeJS 和 Grunt.js 生态的 [Assemble](http://assemble.io/) ，可惜就是太慢了。
+为了不让前端构建过程拖后腿， Huggle 将同样以快著称的 [gulp.js](http://gulpjs.com/) 与 Hugo 结合在一起，
+为你演示构建静态网站的速度极限。
 
-既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。
-于是我们把同样拥有极速体验的流模式构建工具 [gulp.js](http://gulpjs.com/) 与 Hugo 结合在一起，
-让你能免去一切等待，专心在开发模版和书写文章上。
 
 ## 开始
 
 要开始使用 Huggle ，仅需两步：
 
 1. [下载Hugo](https://github.com/spf13/hugo/releases)
-1. [克隆本仓库](https://github.com/ktmud/huggle)
+1. [克隆本仓库](https://github.com/ktmud/huggle)，使用 `make init` 初始化环境
 
 步骤一中下载到的符合你系统版本的可执行文件，需要添加到 $PATH 目录（[详细](http://hugo.spf13.com/overview/installing)）。
 
-克隆好 Huggle 之后，执行 `npm install && make watch` ，
-即可在 `content/` 目录下开始编辑你自己的文章。
+安装完成，执行 `make watch` ，即可在开始在 `content/` 目录下编辑你的文章。
+
 
 ## 进阶
 
