@@ -6,114 +6,13 @@
     <language>en</language>
     <author>Jesse Yang</author>
     <rights>Copyright (c) 2008 - 2013, Jesse Yang; all rights reserved.</rights>
-    <updated>2014-03-04 00:00:00 &#43;0000 UTC</updated>
-    
-    <item>
-      <language>en</language>
-      <title>Hugo &#43; gulp.js = Huggle.</title>
-      <link>http://ktmud.github.io/huggle/intro</link>
-      <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
-      <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/huggle/intro</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is not an independent tool, it&amp;rsquo;s just a demonstation of how to integrate
-&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is a fast and flexible static site generator written in Go.
-It does an amazing job in organizing, templating and building contents.
-&lt;strong&gt;Gulp.js&lt;/strong&gt; is a streaming build system (mostly) for front-end code, which is also very fast.&lt;/p&gt;
-
-&lt;p&gt;Huggle to Hugo, is much like &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; to &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;.
-But with the ability to reuse what NodeJS compunity has created.&lt;/p&gt;
-
-&lt;p&gt;Actually, there is a Huggle equivalent in pure NodeJS, called &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;,
-which run itself as a grunt plugin. It provides highly customizable configure options,
-and a seamless integration with many existing Grunt plugins. Unfortunately, it&amp;rsquo;s just not fast enough.
-To me, the &lt;code&gt;Gruntfile.js&lt;/code&gt; is not as readable as &lt;code&gt;gulpfile.js&lt;/code&gt;, too.&lt;/p&gt;
-
-&lt;p&gt;To gain more speed and ease, I choose to use
-&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; with &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;. The two are both designed to be
-the fastest of its kind.&lt;/p&gt;
-
-&lt;p&gt;By running two tasks &amp;ndash; &lt;strong&gt;generating html from organized markdowns&lt;/strong&gt; and
-&lt;strong&gt;building programmable css/js&lt;/strong&gt;, seperately, we gain the maximum speed and flexibility.&lt;/p&gt;
-
-&lt;h3 id=&#34;toc_1&#34;&gt;What are the benefits?&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Build a 200+ blogs site in seconds&lt;/li&gt;
-&lt;li&gt;Edit, save, and see live changes in less than on second&lt;/li&gt;
-&lt;li&gt;Organize contents in &lt;a href=&#34;http://hugo.spf13.com/content/organization&#34;&gt;a meaningful way&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Simple yet powerful golang html template, with partials and &lt;a href=&#34;http://hugo.spf13.com/extras/shortcodes&#34;&gt;shortcodes&lt;/a&gt; support&lt;/li&gt;
-&lt;li&gt;Write site UI in coffee/stylus/sass/less, anything you like&lt;/li&gt;
-&lt;li&gt;Write browser code like your are in node.js&lt;/li&gt;
-&lt;li&gt;Lightweight client site or pre-rendered syntax highlight&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;Install hugo&lt;/a&gt; //
-Long story short: &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;download the binary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Fork and clone &lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;this repo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make init&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Create a &lt;code&gt;your-post.md&lt;/code&gt; under &lt;code&gt;content/posts/&lt;/code&gt; and edit it&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make server&lt;/code&gt; to see the result&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If you want to update the appearance of your site:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;(optional) Install &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make watch&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Edit files under &lt;code&gt;/assets&lt;/code&gt; and &lt;code&gt;/layouts&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;When you are ready to publish your site, use &lt;code&gt;make gh-pages&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also, don&amp;rsquo;t forget to look into docs on &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_3&#34;&gt;Dive in&lt;/h2&gt;
-
-&lt;h3 id=&#34;toc_4&#34;&gt;Syntax Highlighting&lt;/h3&gt;
-
-&lt;p&gt;Hugo comes with a built in Syntax Highlighting support, based on &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.
-To maximize the build speed, &lt;a href=&#34;http://prismjs.com/&#34;&gt;Prism.js&lt;/a&gt; is used by Huggle, so you can just write Github flavored
-code block, then render syntax highlighting on the client side.&lt;/p&gt;
-
-&lt;pre class=&#34;language-markdown&#34;&gt;
-```javascript
-console.log(&#34;Give me a Huggle!&#34;)
-```
-&lt;/pre&gt;
-
-&lt;p&gt;The output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;javascript&#34;&gt;console.log(&amp;quot;Give me a Huggle!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;toc_5&#34;&gt;Trouble shooting&lt;/h3&gt;
-
-&lt;h4 id=&#34;toc_6&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
-
-&lt;p&gt;It is because there is grammer error in your golange html template.
-Remember, you can only use double quote for strings.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Use &lt;code&gt;&amp;quot;&lt;/code&gt; instead of &lt;code&gt;&#39;&lt;/code&gt;, and blankspace after the &lt;code&gt;.&lt;/code&gt; are all mandatory.&lt;/p&gt;
-</description>
-    </item>
+    <updated>2014-03-08 16:59:35 &#43;0800 CST</updated>
     
     <item>
       <language>zh</language>
       <title>Hugo &#43; gulp.js = Huggle.</title>
       <link>http://ktmud.github.io/huggle/zh/intro</link>
-      <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
+      <pubDate>Sat, 08 Mar 2014 16:59:35 CST</pubDate>
       <author>Jesse Yang</author>
       <guid>http://ktmud.github.io/huggle/zh/intro</guid>
       <description>
@@ -128,11 +27,8 @@ Remember, you can only use double quote for strings.&lt;/p&gt;
 只需要几秒钟。对于如何生成页面，它提供了大量既符合直觉又相当灵活的自定义选项，
 但对喜欢自己编写网站模版样式的设计师和前端工程师来说，使用 Hugo 还有一点障碍 —— css/js 的打包工具仍需单独配置。&lt;/p&gt;
 
-&lt;p&gt;你可以使用完全基于 NodeJS 和 Grunt.js 生态的 &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt; ，可惜就是太慢了。&lt;/p&gt;
-
-&lt;p&gt;既然 Hugo 可以很快，就不能让写前端代码的需求拖了后腿。
-于是我们把同样拥有极速体验的流模式构建工具 &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; 与 Hugo 结合在一起，
-让你能免去一切等待，专心在开发模版和书写文章上。&lt;/p&gt;
+&lt;p&gt;为了不让前端构建过程拖后腿， Huggle 将同样以快著称的 &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; 与 Hugo 结合在一起，
+为你演示构建静态网站的速度极限。&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_1&#34;&gt;开始&lt;/h2&gt;
 
@@ -140,13 +36,12 @@ Remember, you can only use double quote for strings.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;下载Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;克隆本仓库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;克隆本仓库&lt;/a&gt;，使用 &lt;code&gt;make init&lt;/code&gt; 初始化环境&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;步骤一中下载到的符合你系统版本的可执行文件，需要添加到 $PATH 目录（&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;详细&lt;/a&gt;）。&lt;/p&gt;
 
-&lt;p&gt;克隆好 Huggle 之后，执行 &lt;code&gt;npm install &amp;amp;&amp;amp; make watch&lt;/code&gt; ，
-即可在 &lt;code&gt;content/&lt;/code&gt; 目录下开始编辑你自己的文章。&lt;/p&gt;
+&lt;p&gt;安装完成，执行 &lt;code&gt;make watch&lt;/code&gt; ，即可在开始在 &lt;code&gt;content/&lt;/code&gt; 目录下编辑你的文章。&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_2&#34;&gt;进阶&lt;/h2&gt;
 
@@ -244,6 +139,107 @@ otherurls: [&amp;quot;/intro/&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;注意你可以使用 &lt;code&gt;{{ $.OuterValue }}&lt;/code&gt; 获取一个 Context 外部的变量(&lt;a href=&#34;http://stackoverflow.com/questions/14800204/in-a-template-how-do-you-access-an-outer-scope-while-inside-of-a-with-or-rang&#34;&gt;via&lt;/a&gt;)。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <language>en</language>
+      <title>Hugo &#43; gulp.js = Huggle.</title>
+      <link>http://ktmud.github.io/huggle/intro</link>
+      <pubDate>Sat, 08 Mar 2014 16:59:24 CST</pubDate>
+      <author>Jesse Yang</author>
+      <guid>http://ktmud.github.io/huggle/intro</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is not an independent tool, it&amp;rsquo;s just a demonstation of how to integrate
+&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is a fast and flexible static site generator written in Go.
+It does an amazing job in organizing, templating and building contents.
+&lt;strong&gt;Gulp.js&lt;/strong&gt; is a streaming build system (mostly) for front-end code, which is also very fast.&lt;/p&gt;
+
+&lt;p&gt;Huggle to Hugo, is much like &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; to &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;.
+But with the ability to reuse what NodeJS compunity has created.&lt;/p&gt;
+
+&lt;p&gt;Actually, there is a Huggle equivalent in pure NodeJS, called &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;,
+which run itself as a grunt plugin. It provides highly customizable configure options,
+and a seamless integration with many existing Grunt plugins. Unfortunately, it&amp;rsquo;s just not fast enough.
+To me, the &lt;code&gt;Gruntfile.js&lt;/code&gt; is not as readable as &lt;code&gt;gulpfile.js&lt;/code&gt;, too.&lt;/p&gt;
+
+&lt;p&gt;To gain more speed and ease, I choose to use
+&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; with &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;. The two are both designed to be
+the fastest of its kind.&lt;/p&gt;
+
+&lt;p&gt;By running two tasks &amp;ndash; &lt;strong&gt;generating html from organized markdowns&lt;/strong&gt; and
+&lt;strong&gt;building programmable css/js&lt;/strong&gt;, seperately, we gain the maximum speed and flexibility.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;What are the benefits?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Build a 200+ blogs site in seconds&lt;/li&gt;
+&lt;li&gt;Edit, save, and see live changes in less than on second&lt;/li&gt;
+&lt;li&gt;Organize contents in &lt;a href=&#34;http://hugo.spf13.com/content/organization&#34;&gt;a meaningful way&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Simple yet powerful golang html template, with partials and &lt;a href=&#34;http://hugo.spf13.com/extras/shortcodes&#34;&gt;shortcodes&lt;/a&gt; support&lt;/li&gt;
+&lt;li&gt;Write site UI in coffee/stylus/sass/less, anything you like&lt;/li&gt;
+&lt;li&gt;Write browser code like your are in node.js&lt;/li&gt;
+&lt;li&gt;Lightweight client site or pre-rendered syntax highlight&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Quick start&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;Install hugo&lt;/a&gt; //
+Long story short: &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;download the binary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fork and clone &lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;this repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;your-post.md&lt;/code&gt; under &lt;code&gt;content/posts/&lt;/code&gt; and edit it&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make server&lt;/code&gt; to see the result&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you want to update the appearance of your site:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;(optional) Install &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make watch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Edit files under &lt;code&gt;/assets&lt;/code&gt; and &lt;code&gt;/layouts&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When you are ready to publish your site, use &lt;code&gt;make gh-pages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, don&amp;rsquo;t forget to look into docs on &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Dive in&lt;/h2&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Syntax Highlighting&lt;/h3&gt;
+
+&lt;p&gt;Hugo comes with a built in Syntax Highlighting support, based on &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.
+To maximize the build speed, &lt;a href=&#34;http://prismjs.com/&#34;&gt;Prism.js&lt;/a&gt; is used by Huggle, so you can just write Github flavored
+code block, then render syntax highlighting on the client side.&lt;/p&gt;
+
+&lt;pre class=&#34;language-markdown&#34;&gt;
+```javascript
+console.log(&#34;Give me a Huggle!&#34;)
+```
+&lt;/pre&gt;
+
+&lt;p&gt;The output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;javascript&#34;&gt;console.log(&amp;quot;Give me a Huggle!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Trouble shooting&lt;/h3&gt;
+
+&lt;h4 id=&#34;toc_6&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
+
+&lt;p&gt;It is because there is grammer error in your golange html template.
+Remember, you can only use double quote for strings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Use &lt;code&gt;&amp;quot;&lt;/code&gt; instead of &lt;code&gt;&#39;&lt;/code&gt;, and blankspace after the &lt;code&gt;.&lt;/code&gt; are all mandatory.&lt;/p&gt;
 </description>
     </item>
     
