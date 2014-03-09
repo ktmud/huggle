@@ -9,8 +9,6 @@ $('pre > code').each(function() {
   return Prism.highlightElement(this);
 });
 
-$('#TableOfContents > ul ul').addClass('nav');
-
 $('#toc').affix({
   offset: {
     top: function() {
