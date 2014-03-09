@@ -23,7 +23,7 @@
     </li>
     {{ if (isset .Params "commentable") and (not .Params.commentable) }}
     {{ else if .Site.Params.disqus }}
-      <li><a href="#disqus_thread"></a></li>
+      <li class="hidden-print"><a href="#disqus_thread"></a></li>
     {{ end }}
   </ul>
 {{ end }}
