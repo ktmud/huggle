@@ -5,18 +5,17 @@ var plugins = require('gulp-load-plugins')()
 var sourcedir = "template/assets"
 var src = {
   bower: ['bower.json', '.bowerrc'],
+  statics: ['template/static/**/*'],
   styles: [sourcedir + '/styles/**/*.+(css|scss)'],
-  scripts: [sourcedir + '/**/*.+(js|coffee)'],
+  scripts: [sourcedir + '/scripts/**/*.+(js|coffee)'],
   // The entry point of a browserify bundle
   // add as many bundles as you wish
-  main: sourcedir + '/app.coffee',
+  main: sourcedir + '/scripts/app.coffee',
 }
 var publishdir = 'public'
 var dist = {
   all: [publishdir + '/**/*'],
-  css: publishdir + '/static/',
-  js: publishdir + '/static/',
-  vendor: publishdir + '/static/'
+  assets: publishdir + '/static/'
 }
 var debug = true
 
@@ -31,18 +30,23 @@ gulp.task('bower', function() {
   return plugins.bowerFiles()
     .pipe(jsFilter)
     .pipe(plugins.concat('vendor.js')) // bower components js goes to vendor.js
-    .pipe(gulp.dest(dist.js))
+    .pipe(gulp.dest(dist.assets))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
     .pipe(plugins.concat('vendor.css')) // css goes to vendor.css
-    .pipe(gulp.dest(dist.css))
+    .pipe(gulp.dest(dist.assets))
     .pipe(cssFilter.restore())
     .pipe(plugins.rename(function(path) {
       if (~path.dirname.indexOf('fonts')) {
         path.dirname = '/fonts'
       }
     }))
-    .pipe(gulp.dest(dist.vendor))
+    .pipe(gulp.dest(dist.assets))
+})
+// sync sourceDir to public dir
+gulp.task('sync', function() {
+  return gulp.src(src.statics)
+    .pipe(gulp.dest(dist.assets))
 })
 
 function buildCSS() {
@@ -53,7 +57,7 @@ function buildCSS() {
       sourceComments: debug ? 'map' : false
     }))
     .pipe(plugins.concat('app.css'))
-    .pipe(gulp.dest(dist.css))
+    .pipe(gulp.dest(dist.assets))
 }
 
 function buildJS() {
@@ -67,15 +71,16 @@ function buildJS() {
     .pipe(plugins.rename(function(file) {
       file.extname = '.js'
     }))
-    .pipe(gulp.dest(dist.js))
+    .pipe(gulp.dest(dist.assets))
 }
 
 gulp.task('css', buildCSS)
 gulp.task('js', buildJS)
 
 
-gulp.task('watch', ['bower', 'css', 'js'], function() {
+gulp.task('watch', ['bower', 'sync', 'css', 'js'], function() {
   gulp.watch(src.bower, ['bower'])
+  gulp.watch(src.statics, ['sync'])
   plugins.watch({ glob: src.styles, name: 'styles' }, delayed(buildCSS))
   plugins.watch({ glob: src.scripts, name: 'scripts' }, delayed(buildJS))
 })
@@ -100,15 +105,15 @@ gulp.task('live', ['watch'], function() {
 })
 
 gulp.task('compress-css', ['css'], function() {
-  return gulp.src(dist.css)
+  return gulp.src(dist.assets)
     .pipe(plugins.minifyCss())
-    .pipe(gulp.dest(dist.css))
+    .pipe(gulp.dest(dist.assets))
 })
 
 gulp.task('compress-js', ['js'], function() {
-  return gulp.src(dist.js)
+  return gulp.src(dist.assets)
     .pipe(plugins.uglify())
-    .pipe(gulp.dest(dist.js))
+    .pipe(gulp.dest(dist.assets))
 })
 
 gulp.task('nodebug', function() {
