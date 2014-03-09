@@ -1,12 +1,17 @@
-<header id="header">
+<header id="header" class="navbar navbar-default">
   <div class="container">
-    <a class="go-home" href="{{ .Site.BaseUrl }}/{{ .Params.lang }}">Home</a>
-    {{ if .Params.otherlangs }}
-      <p class="pull-right">
-      {{ range $index, $lang := .Params.otherlangs }}
-        <a href="{{ $.Site.BaseUrl }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
-      {{ end }}
-      </p>
-    {{ end }}
+    <ul class="nav navbar-nav main-nav">
+      <li>
+      <a class="go-home" href="{{ .Site.BaseUrl }}/{{ .Params.lang }}">Home</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <a href="https://github.com/ktmud/huggle">
+        <span class="icon-github"></span>
+        Github
+      </a>
+      </li>
+    </ul>
   </div>
 </header>

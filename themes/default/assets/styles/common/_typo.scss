@@ -1,26 +1,4 @@
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Merriweather'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
-}
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff) format('woff');
-}
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Merriweather Italic'), local('Merriweather-Italic'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/So5lHxHT37p2SS4-t60SlL52ooqJRs02xO3mONBoqeI.woff) format('woff');
-}
-
-body {
-  font-family: 'Merriweather', 'Lora', serif;;
-}
+@import "./font";
 
 .subtitle {
   font-size: 1.5em;
@@ -29,8 +7,11 @@ body {
 
 .heading {
   margin-bottom: 30px;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #eee;
+  .meta {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 10px;
+    color: #777;
+  }
 }
 
 .readable {
@@ -41,11 +22,12 @@ body {
 p, ul, ol {
   margin-bottom: 1em;
 }
-
 h1, h2, h3, h4, h5 {
   margin-bottom: 0.7em;
 }
-
+h1 {
+  margin-top: 0.3em;
+}
 h2, h3, h4 {
   margin-top: 1.2em;
 }

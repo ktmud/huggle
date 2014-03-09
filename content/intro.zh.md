@@ -7,9 +7,10 @@ slug: zh/intro/
 lang: zh
 otherlangs: ["en"]
 otherurls: ["/intro/"]
+
 ---
 
-## 什么是 Huggle ？
+## 这是什么？
 
 Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具的一个示范，
 目标是帮助你**更快速地构建静态网站**，如个人博客、公司/项目主页、作品集网站等。
@@ -23,7 +24,7 @@ Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具
 为你演示构建静态网站的速度极限。
 
 
-## 开始
+## 开始使用
 
 要开始使用 Huggle ，仅需两步：
 
@@ -79,12 +80,15 @@ otherurls: ["/intro/"]
 ---
 ```
     
-### golang text/template 小贴士
+## 编辑模版
+    
+Hugo 使用 golang 的 [text/template](http://golang.org/pkg/text/template/) ，语法极为简单。
+你可以在 go 的官方文档或者 [Hugo的文档](http://hugo.spf13.com/layout/go-templates) 里详细了解。
 
-除了 [Hugo文档](http://hugo.spf13.com/layout/go-templates) 里已经说明的以外，还有一些注意事项值得在此说明：
+下面是一些官方文档里可能没有提及的东西：
 
 1. 模版语句内的字符串实体必须用双引号
-2. 双括弧两边继续留有空格
+2. 双括弧两边必须留有空格
 
 因此，对于语句：
 
@@ -120,7 +124,8 @@ otherurls: ["/intro/"]
 {{ end }}
 ```
 
-没有 `unless` ，但是可以 `if not` ，更多指南请参考 [golang 文档](http://golang.org/pkg/text/template/)。
+没有 `unless` ，但是可以 `if not` 。除了 `eq`, `ne`，还有还有 `lt`, `le`, `gt`, `ge`，
+分别代表小于、小于等于、大于、大于等于。
 
 ### Context 和循环枚举
 
@@ -134,6 +139,45 @@ otherurls: ["/intro/"]
 
 注意你可以使用 `{{ $.OuterValue }}` 获取一个 Context 外部的变量([via][1])。
 
+### 时间格式化
+
+使用类似于 `{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 MST" }}` 来格式化时间。
+注意，这些月份和时间的数字[并非它看起来那么随意][2]。
+
+可用数字一览表：
+
+```go
+const (
+    stdLongMonth      = "January"
+    stdMonth          = "Jan"
+    stdNumMonth       = "1"
+    stdZeroMonth      = "01"
+    stdLongWeekDay    = "Monday"
+    stdWeekDay        = "Mon"
+    stdDay            = "2"
+    stdUnderDay       = "_2"
+    stdZeroDay        = "02"
+    stdHour           = "15"
+    stdHour12         = "3"
+    stdZeroHour12     = "03"
+    stdMinute         = "4"
+    stdZeroMinute     = "04"
+    stdSecond         = "5"
+    stdZeroSecond     = "05"
+    stdLongYear       = "2006"
+    stdYear           = "06"
+    stdPM             = "PM"
+    stdpm             = "pm"
+    stdTZ             = "MST"
+    stdISO8601TZ      = "Z0700"  // prints Z for UTC
+    stdISO8601ColonTZ = "Z07:00" // prints Z for UTC
+    stdNumTZ          = "-0700"  // always numeric
+    stdNumShortTZ     = "-07"    // always numeric
+    stdNumColonTZ     = "-07:00" // always numeric
+)
+```
+
 
 [1]: http://stackoverflow.com/questions/14800204/in-a-template-how-do-you-access-an-outer-scope-while-inside-of-a-with-or-rang
+[2]: http://stackoverflow.com/questions/14106541/go-parsing-date-time-030strings-which-are-not-standard-formats
 

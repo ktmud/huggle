@@ -30,6 +30,7 @@
       "main": [
           "prism.js",
           "components/prism-yaml.js",
+          "components/prism-go.js",
           "components/prism-gotmpl.js",
           "themes/prism.css"
       ]

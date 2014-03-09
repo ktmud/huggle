@@ -1,15 +1,25 @@
 {{ template "chrome/layouts/default.begin.html" . }}
 
-<article class="readable">
-  <div class="heading">
-    <h1>{{ .Title }}</h1>
-    {{ if isset .Params "subtitle" }}
-      <p class="subtitle">{{ index .Params "subtitle" }}</p>
-    {{ end }}
+<div class="row">
+  <div class="col-md-3 col-md-push-9 aside">
+    {{ template "_default/sidebar.html" . }}
   </div>
-  {{ .Content }}
-</article>
-
-{{ template "chrome/disqus.html" . }}
+  <div class="col-md-9 col-md-pull-3">
+    <div class="heading">
+      <h1>{{ .Title }}</h1>
+      {{ if isset .Params "subtitle" }}
+        <p class="subtitle">{{ index .Params "subtitle" }}</p>
+      {{ end }}
+      <div class="meta">
+        {{ template "_default/meta.html" . }}
+      </div>
+    </div>
+    <article class="readable">
+      {{ .Content }}
+    </article>
+    {{ template "chrome/disqus.html" . }}
+    {{ template "chrome/footer.html" . }}
+  </div>
+</div>
 
 {{ template "chrome/layouts/default.end.html" . }}

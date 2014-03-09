@@ -1,0 +1,24 @@
+<div class="mod tip-box">
+  {{ if .Params.otherlangs }}
+  <h5>
+    {{ if not .Params.lang }}
+      This post is also available in:
+    {{ else if eq .Params.lang "zh" }}
+      本文还有其他语言版本：
+    {{/* else if eq .Params.lang "fr" */}}
+    {{ end }}
+  </h5>
+  <ul class="meta-links">
+    {{ range $index, $lang := .Params.otherlangs }}
+      <li><a href="{{ $.Site.BaseUrl }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>
+
+<div class="mod">
+</div>
+
+<div id="toc" class="mod">
+  {{ .TableOfContents }}
+</div>

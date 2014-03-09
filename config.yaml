@@ -9,6 +9,7 @@ baseurl: http://ktmud.github.io/huggle/
 title: Huggle.
 params:
   analytics: 'UA-1080811-19'  
+  disqus: 'huggle'
   copyright: "Copyright &copy; 2014 Jesse Yang."
   author: Jesse Yang
   lang: en  # default language of your site
