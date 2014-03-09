@@ -23,34 +23,101 @@
 
 </head>
 <body>
-  <header id="header">
+  <header id="header" class="navbar navbar-default">
   <div class="container">
-    <a class="go-home" href="http://ktmud.github.io/huggle//zh">Home</a>
-    
-      <p class="pull-right">
-      
-        <a href="http://ktmud.github.io/huggle//intro/">English</a>
-      
-      </p>
-    
+    <ul class="nav navbar-nav main-nav">
+      <li>
+      <a class="go-home" href="http://ktmud.github.io/huggle//zh">Home</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <a href="https://github.com/ktmud/huggle">
+        <span class="icon-github"></span>
+        Github
+      </a>
+      </li>
+    </ul>
   </div>
 </header>
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9 col-md-10">
 
 
-<article class="readable">
-  <div class="heading">
-    <h1>Hugo &#43; gulp.js = Huggle.</h1>
-    
-      <p class="subtitle">速度极快的静态网站构建工具</p>
-    
-  </div>
+<div class="row">
+  <div class="col-md-3 col-md-push-9 aside">
+    <div class="mod tip-box">
   
+  <h5>
+    
+      本文还有其他语言版本：
+    
+    
+  </h5>
+  <ul class="meta-links">
+    
+      <li><a href="http://ktmud.github.io/huggle//intro/">English</a>
+    
+  </ul>
+  
+</div>
 
-<h2 id="toc_0">什么是 Huggle ？</h2>
+<div class="mod">
+</div>
+
+<div id="toc" class="mod">
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#toc_0">这是什么？</a></li>
+<li><a href="#toc_1">开始使用</a></li>
+<li><a href="#toc_2">进阶</a>
+<ul>
+<li><a href="#toc_3">改善开发体验</a></li>
+<li><a href="#toc_4">多语言支持</a></li>
+</ul></li>
+<li><a href="#toc_5">编辑模版</a>
+<ul>
+<li><a href="#toc_6">条件判断</a></li>
+<li><a href="#toc_7">Context 和循环枚举</a></li>
+<li><a href="#toc_8">时间格式化</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+
+  </div>
+  <div class="col-md-9 col-md-pull-3">
+    <div class="heading">
+      <h1>Hugo &#43; gulp.js = Huggle.</h1>
+      
+        <p class="subtitle">速度极快的静态网站构建工具</p>
+      
+      <div class="meta">
+        
+  <ul class="list-inline">
+    <li>
+      <strong class="author">Jesse Yang</strong> 发表于
+    </li>
+    <li>
+      <span class="icon-clock"></span>
+      <time class="pubdate" datetime="2014-03-08 16:59:35 &#43;0800 CST">2014-03-08</time>
+    </li>
+    
+      <li><a href="#disqus_thread"></a></li>
+    
+  </ul>
+
+
+
+      </div>
+    </div>
+    <article class="readable">
+      
+
+<h2 id="toc_0">这是什么？</h2>
 
 <p>Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具的一个示范，
 目标是帮助你<strong>更快速地构建静态网站</strong>，如个人博客、公司/项目主页、作品集网站等。</p>
@@ -63,7 +130,7 @@
 <p>为了不让前端构建过程拖后腿， Huggle 将同样以快著称的 <a href="http://gulpjs.com/">gulp.js</a> 与 Hugo 结合在一起，
 为你演示构建静态网站的速度极限。</p>
 
-<h2 id="toc_1">开始</h2>
+<h2 id="toc_1">开始使用</h2>
 
 <p>要开始使用 Huggle ，仅需两步：</p>
 
@@ -121,13 +188,16 @@ otherurls: [&quot;/intro/&quot;]
 ---
 </code></pre>
 
-<h3 id="toc_5">golang text/template 小贴士</h3>
+<h2 id="toc_5">编辑模版</h2>
 
-<p>除了 <a href="http://hugo.spf13.com/layout/go-templates">Hugo文档</a> 里已经说明的以外，还有一些注意事项值得在此说明：</p>
+<p>Hugo 使用 golang 的 <a href="http://golang.org/pkg/text/template/">text/template</a> ，语法极为简单。
+你可以在 go 的官方文档或者 <a href="http://hugo.spf13.com/layout/go-templates">Hugo的文档</a> 里详细了解。</p>
+
+<p>下面是一些官方文档里可能没有提及的东西：</p>
 
 <ol>
 <li>模版语句内的字符串实体必须用双引号</li>
-<li>双括弧两边继续留有空格</li>
+<li>双括弧两边必须留有空格</li>
 </ol>
 
 <p>因此，对于语句：</p>
@@ -160,7 +230,8 @@ otherurls: [&quot;/intro/&quot;]
 {{ end }}
 </code></pre>
 
-<p>没有 <code>unless</code> ，但是可以 <code>if not</code> ，更多指南请参考 <a href="http://golang.org/pkg/text/template/">golang 文档</a>。</p>
+<p>没有 <code>unless</code> ，但是可以 <code>if not</code> 。除了 <code>eq</code>, <code>ne</code>，还有还有 <code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>，
+分别代表小于、小于等于、大于、大于等于。</p>
 
 <h3 id="toc_7">Context 和循环枚举</h3>
 
@@ -173,11 +244,49 @@ otherurls: [&quot;/intro/&quot;]
 
 <p>注意你可以使用 <code>{{ $.OuterValue }}</code> 获取一个 Context 外部的变量(<a href="http://stackoverflow.com/questions/14800204/in-a-template-how-do-you-access-an-outer-scope-while-inside-of-a-with-or-rang">via</a>)。</p>
 
-</article>
+<h3 id="toc_8">时间格式化</h3>
 
+<p>使用类似于 <code>{{ .Date.Format &quot;Mon, 02 Jan 2006 15:04:05 MST&quot; }}</code> 来格式化时间。
+注意，这些月份和时间的数字<a href="http://stackoverflow.com/questions/14106541/go-parsing-date-time-030strings-which-are-not-standard-formats">并非它看起来那么随意</a>。</p>
+
+<p>可用数字一览表：</p>
+
+<pre><code class="go">const (
+    stdLongMonth      = &quot;January&quot;
+    stdMonth          = &quot;Jan&quot;
+    stdNumMonth       = &quot;1&quot;
+    stdZeroMonth      = &quot;01&quot;
+    stdLongWeekDay    = &quot;Monday&quot;
+    stdWeekDay        = &quot;Mon&quot;
+    stdDay            = &quot;2&quot;
+    stdUnderDay       = &quot;_2&quot;
+    stdZeroDay        = &quot;02&quot;
+    stdHour           = &quot;15&quot;
+    stdHour12         = &quot;3&quot;
+    stdZeroHour12     = &quot;03&quot;
+    stdMinute         = &quot;4&quot;
+    stdZeroMinute     = &quot;04&quot;
+    stdSecond         = &quot;5&quot;
+    stdZeroSecond     = &quot;05&quot;
+    stdLongYear       = &quot;2006&quot;
+    stdYear           = &quot;06&quot;
+    stdPM             = &quot;PM&quot;
+    stdpm             = &quot;pm&quot;
+    stdTZ             = &quot;MST&quot;
+    stdISO8601TZ      = &quot;Z0700&quot;  // prints Z for UTC
+    stdISO8601ColonTZ = &quot;Z07:00&quot; // prints Z for UTC
+    stdNumTZ          = &quot;-0700&quot;  // always numeric
+    stdNumShortTZ     = &quot;-07&quot;    // always numeric
+    stdNumColonTZ     = &quot;-07:00&quot; // always numeric
+)
+</code></pre>
+
+    </article>
+    
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'huggle';
+  var disqus_identifier = 'http:\/\/ktmud.github.io\/huggle\/zh\/intro';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -186,18 +295,32 @@ otherurls: [&quot;/intro/&quot;]
 </script>
 
 
-
-        <footer id="footer">
+    <footer id="footer">
 
   Copyright &copy; 2014 Jesse Yang.
 
 &nbsp;Powered by <a href="https://github.com/ktmud/huggle">Huggle</a>
 </footer>
+
 <script src="http://ktmud.github.io/huggle/static/vendor.js"></script>
 <script src="http://ktmud.github.io/huggle/static/app.js"></script>
 
-       </div>
-    </div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'huggle';
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+
+  </div>
+</div>
+
+
   </div>
 </body>
 </html>

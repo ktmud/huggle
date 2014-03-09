@@ -33,34 +33,64 @@ p + pre[class*="language-"] {
   color: #bbb; }
 
 @font-face {
-  font-family: 'Merriweather';
+  font-family: 'huggle';
+  src: url('fonts/huggle.eot?j8q7sr');
+  src: url('fonts/huggle.eot?#iefixj8q7sr') format('embedded-opentype'), url('fonts/huggle.woff?j8q7sr') format('woff'), url('fonts/huggle.ttf?j8q7sr') format('truetype'), url('fonts/huggle.svg?j8q7sr#huggle') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'huggle';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-clock:before {
+  content: "\e600"; }
+
+.icon-github:before {
+  content: "\e601"; }
+
+@font-face {
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Merriweather'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff) format('woff'); }
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff'); }
 
 @font-face {
-  font-family: 'Merriweather';
+  font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 700;
-  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff) format('woff'); }
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff'); }
 
 @font-face {
-  font-family: 'Merriweather';
+  font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: local('Merriweather Italic'), local('Merriweather-Italic'), url(http://themes.googleusercontent.com/static/fonts/merriweather/v6/So5lHxHT37p2SS4-t60SlL52ooqJRs02xO3mONBoqeI.woff) format('woff'); }
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff) format('woff'); }
 
 body {
-  font-family: 'Merriweather', 'Lora', serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .subtitle {
   font-size: 1.5em;
   color: #666; }
 
 .heading {
-  margin-bottom: 30px;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #eee; }
+  margin-bottom: 30px; }
+  .heading .meta {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 10px;
+    color: #777; }
 
 .readable {
   margin-bottom: 60px;
@@ -72,15 +102,62 @@ p, ul, ol {
 h1, h2, h3, h4, h5 {
   margin-bottom: 0.7em; }
 
+h1 {
+  margin-top: 0.3em; }
+
 h2, h3, h4 {
   margin-top: 1.2em; }
+
+#toc.affix {
+  top: 20px; }
+
+#TableOfContents > ul > li > ul {
+  padding-left: 0;
+  list-style: none; }
+  #TableOfContents > ul > li > ul ul {
+    padding-left: 0;
+    margin: 0 0 0.5em;
+    font-size: 0.88em; }
+  #TableOfContents > ul > li > ul ul a {
+    padding-left: 1.5em; }
+  #TableOfContents > ul > li > ul ul a {
+    padding-left: 3em; }
+  #TableOfContents > ul > li > ul ul a {
+    padding-top: 3px;
+    padding-bottom: 3px; }
+  #TableOfContents > ul > li > ul ul ul {
+    display: none; }
+#TableOfContents a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+  border-left: 2px solid transparent;
+  color: #888; }
+  #TableOfContents a:hover {
+    text-decoration: none; }
+#TableOfContents .active > a {
+  color: #2e8ab8;
+  border-left-color: #39c;
+  font-weight: 600; }
+#TableOfContents > ul {
+  padding-left: 0; }
+#TableOfContents > ul > li {
+  list-style: none;
+  margin: 0; }
 
 .absmiddle {
   margin: 4% auto;
   max-width: 600px; }
 
 #header {
-  margin: 30px 0 20px; }
+  margin-bottom: 40px;
+  border-radius: 0;
+  border-bottom: 1px solid #90c5df;
+  background: #fbfbfb; }
+  #header .main-nav a {
+    color: #428bca; }
+    #header .main-nav a:hover {
+      color: #3073a9; }
 
 #footer {
   color: #999;
@@ -91,6 +168,29 @@ h2, h3, h4 {
 
 #disqus_thread {
   margin-top: 60px; }
+
+.tip-box {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 1em;
+  font-size: 12px; }
+  .tip-box h5 {
+    font-size: 13px;
+    font-weight: 400; }
+
+.aside .mod {
+  margin-bottom: 30px; }
+
+.meta-links {
+  margin: 12px 0 0;
+  padding-left: 2em;
+  color: #aaa; }
+
+.nav-links a + a {
+  display: inline-block;
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 1px solid #ddd; }
 
 .home .slogan {
   font-size: 20px;

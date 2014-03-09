@@ -23,32 +23,98 @@
 
 </head>
 <body>
-  <header id="header">
+  <header id="header" class="navbar navbar-default">
   <div class="container">
-    <a class="go-home" href="http://ktmud.github.io/huggle//">Home</a>
-    
-      <p class="pull-right">
-      
-        <a href="http://ktmud.github.io/huggle//zh/intro/">中文</a>
-      
-      </p>
-    
+    <ul class="nav navbar-nav main-nav">
+      <li>
+      <a class="go-home" href="http://ktmud.github.io/huggle//">Home</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <a href="https://github.com/ktmud/huggle">
+        <span class="icon-github"></span>
+        Github
+      </a>
+      </li>
+    </ul>
   </div>
 </header>
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9 col-md-10">
 
 
-<article class="readable">
-  <div class="heading">
-    <h1>Hugo &#43; gulp.js = Huggle.</h1>
-    
-      <p class="subtitle">Build a highly customizable personal blog blazing fast</p>
-    
-  </div>
+<div class="row">
+  <div class="col-md-3 col-md-push-9 aside">
+    <div class="mod tip-box">
   
+  <h5>
+    
+      This post is also available in:
+    
+  </h5>
+  <ul class="meta-links">
+    
+      <li><a href="http://ktmud.github.io/huggle//zh/intro/">中文</a>
+    
+  </ul>
+  
+</div>
+
+<div class="mod">
+</div>
+
+<div id="toc" class="mod">
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#toc_0">Introduction</a>
+<ul>
+<li><a href="#toc_1">What are the benefits?</a></li>
+</ul></li>
+<li><a href="#toc_2">Quick start</a></li>
+<li><a href="#toc_3">Dive in</a>
+<ul>
+<li><a href="#toc_4">Syntax Highlighting</a></li>
+<li><a href="#toc_5">Trouble shooting</a>
+<ul>
+<li><a href="#toc_6">Rendering error: html/template: &ldquo;xxx.html&rdquo; is an incomplete template</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+
+  </div>
+  <div class="col-md-9 col-md-pull-3">
+    <div class="heading">
+      <h1>Hugo &#43; gulp.js = Huggle.</h1>
+      
+        <p class="subtitle">Build a highly customizable personal blog blazing fast</p>
+      
+      <div class="meta">
+        
+  <ul class="list-inline">
+    <li>
+      By <strong class="author">Jesse Yang</strong>
+    </li>
+    <li>
+      <span class="icon-clock"></span>
+      <time class="pubdate" datetime="2014-03-08 16:59:24 &#43;0800 CST">2014-03-08</time>
+    </li>
+    
+      <li><a href="#disqus_thread"></a></li>
+    
+  </ul>
+
+
+
+      </div>
+    </div>
+    <article class="readable">
+      
 
 <h2 id="toc_0">Introduction</h2>
 
@@ -140,11 +206,12 @@ Remember, you can only use double quote for strings.</p>
 
 <p>Use <code>&quot;</code> instead of <code>'</code>, and blankspace after the <code>.</code> are all mandatory.</p>
 
-</article>
-
+    </article>
+    
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'huggle';
+  var disqus_identifier = 'http:\/\/ktmud.github.io\/huggle\/intro';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -153,18 +220,32 @@ Remember, you can only use double quote for strings.</p>
 </script>
 
 
-
-        <footer id="footer">
+    <footer id="footer">
 
   Copyright &copy; 2014 Jesse Yang.
 
 &nbsp;Powered by <a href="https://github.com/ktmud/huggle">Huggle</a>
 </footer>
+
 <script src="http://ktmud.github.io/huggle/static/vendor.js"></script>
 <script src="http://ktmud.github.io/huggle/static/app.js"></script>
 
-       </div>
-    </div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'huggle';
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+
+  </div>
+</div>
+
+
   </div>
 </body>
 </html>
