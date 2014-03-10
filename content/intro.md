@@ -4,6 +4,7 @@ subtitle: Build a highly customizable personal blog blazing fast
 date: 2014-03-08T16:59:24+08:00
 slug: intro
 
+lang: en
 otherlangs: ["zh"]
 otherurls: ["/zh/intro/"]
 
@@ -37,8 +38,6 @@ By running two tasks -- **generating html from organized markdowns** and
 
 - Build a 200+ blogs site in seconds
 - Edit, save, and see live changes in less than on second
-- Organize contents in [a meaningful way](http://hugo.spf13.com/content/organization)
-- Simple yet powerful golang html template, with partials and [shortcodes](http://hugo.spf13.com/extras/shortcodes) support
 - Write site UI in coffee/stylus/sass/less, anything you like
 - Write browser code like your are in node.js
 - Lightweight client site or pre-rendered syntax highlight
@@ -94,3 +93,19 @@ Remember, you can only use double quote for strings.
 ```
 
 Use `"` instead of `'`, and blankspace after the `.` are all mandatory.
+
+
+### Limitations
+
+Hugo is relative new, there are some limitations if you want to try it now:
+
+1. no pagination support yet
+2. will rebuild the whole site when changes detected by `hugo --watch`,
+   though total time consumed may be negligible.
+3. no easy way to import a Wordpress/jekyll blog yet.
+
+See the [roadmap][1] for what's missing (and coming) now.
+
+[1]: https://github.com/spf13/hugo/blob/master/docs/content/meta/roadmap.md
+
+

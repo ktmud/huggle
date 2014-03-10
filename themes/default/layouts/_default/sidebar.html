@@ -1,7 +1,7 @@
 <div class="mod tip-box">
   {{ if .Params.otherlangs }}
   <h5>
-    {{ if not .Params.lang }}
+    {{ if eq .Params.lang "en" }}
       This post is also available in:
     {{ else if eq .Params.lang "zh" }}
       本文还有其他语言版本：

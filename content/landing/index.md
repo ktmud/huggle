@@ -7,7 +7,6 @@ slug: "/"
 lang: en
 otherlangs: ["zh"]
 otherurls: ["/zh/"]
-go: See how it works
 
 ---
 

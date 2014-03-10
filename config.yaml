@@ -2,6 +2,7 @@
 layoutdir: "template/layouts"
 indexes:
   tag: tags
+  category: categories
 permalinks:
   landing: /:slug
   blog: /:year/:month/:slug/

@@ -1,4 +1,4 @@
-{{ if not .Params.lang }}
+{{ if eq .Params.lang "en" }}
   <ul class="list-inline">
     <li>
       By <strong class="author">{{ or .Params.author .Site.Params.author }}</strong>

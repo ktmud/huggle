@@ -11,7 +11,7 @@ $('pre > code').each ->
   Prism.highlightElement(this)
 
 # normalize TOC
-#$('#TableOfContents > ul ul').addClass('nav')
+$('#TableOfContents > ul ul').addClass('nav')
 $('#toc').affix
   offset:
     top: ->
