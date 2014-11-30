@@ -1,6 +1,0 @@
-# This is for gh-pages branch
-.DS_Store
-
-node_modules
-bower_components
-template

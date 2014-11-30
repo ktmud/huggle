@@ -2,7 +2,7 @@
 title: Hugo + gulp.js = Huggle.
 subtitle: Build a highly customizable personal blog blazing fast
 date: 2014-03-08T16:59:24+08:00
-slug: intro
+slug: /en/intro
 
 lang: en
 otherlangs: ["zh"]
@@ -12,23 +12,21 @@ otherurls: ["/zh/intro/"]
 
 ## Introduction
 
-**Huggle** is not an independent tool, it's just a demonstation of how to integrate
-[Hugo](http://hugo.spf13.com/) + [gulp.js](http://gulpjs.com/).
+**Huggle** is a simple demonstation of how to integrate
+[Hugo](http://hugo.spf13.com/) + [gulp.js](http://gulpjs.com/) with multi-language support.
 
 **Hugo** is a fast and flexible static site generator written in Go.
 It does an amazing job in organizing, templating and building contents.
-**Gulp.js** is a streaming build system (mostly) for front-end code, which is also very fast.
+**Gulp.js** is a streaming build system (mostly) for front-end code, which is also super fast.
 
 Huggle to Hugo, is much like [Octopress](http://octopress.org/) to [jekyll](http://jekyllrb.com/).
-But with the ability to reuse what NodeJS compunity has created.
+But with the ability to reuse what node.js compunity has offered.
 
-Actually, there is a Huggle equivalent in pure NodeJS, called [Assemble](http://assemble.io/),
-which run itself as a grunt plugin. It provides highly customizable configure options,
-and a seamless integration with many existing Grunt plugins. Unfortunately, it's just not fast enough.
-To me, the `Gruntfile.js` is not as readable as `gulpfile.js`, too.
+You may have seen some equivalents in pure node.js, like [Assemble](http://assemble.io/).
+But unfortunately, they are just not fast enough.
 
-To gain more speed and ease, I choose to use 
-[Hugo](http://hugo.spf13.com/) with [gulp.js](http://gulpjs.com/). The two are both designed to be
+To gain more speed and ease, let's try
+[Hugo](http://hugo.spf13.com/) + [gulp.js](http://gulpjs.com/). The two are both designed to be
 the fastest of its kind.
 
 By running two tasks -- **generating html from organized markdowns** and
@@ -37,7 +35,7 @@ By running two tasks -- **generating html from organized markdowns** and
 ### What are the benefits?
 
 - Build a 200+ blogs site in seconds
-- Edit, save, and see live changes in less than on second
+- Edit, save, and see live changes in less than one second
 - Write site UI in coffee/stylus/sass/less, anything you like
 - Write browser code like your are in node.js
 - Lightweight client site or pre-rendered syntax highlight
@@ -45,23 +43,21 @@ By running two tasks -- **generating html from organized markdowns** and
 ## Quick start
 
 1. [Install hugo](http://hugo.spf13.com/overview/installing) //
-   Long story short: [download the binary](https://github.com/spf13/hugo/releases)
-1. Fork and clone [this repo](https://github.com/ktmud/huggle)
-1. `make init`
-1. Create a `your-post.md` under `content/posts/` and edit it
-1. `make server` to see the result
+   Long story short: `brew install hugo`
+1. Create a site: `hugo new site /path/to/site`
+1. `cd /path/to/site`
+1. `git clone https://github.com/ktmud/huggle.git theme/huggle`
+1. `cd them/huggle && make init`
 
-If you want to update the appearance of your site:
-
-1. (optional) Install [livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
-1. `make watch`
-1. Edit files under `/assets` and `/layouts`
+If you want to update the appearance of your site, you can just for the theme and update source files under "static/assets" and "layouts".
 
 When you are ready to publish your site, use `make gh-pages`.
 
-Also, don't forget to look into docs on [Hugo](http://hugo.spf13.com/) and [gulp.js](http://gulpjs.com/).
-
 ## Dive in
+
+Don't forget to check out docs on [Hugo](http://hugo.spf13.com/) and [gulp.js](http://gulpjs.com/).
+
+## Extras
 
 ### Syntax Highlighting
 

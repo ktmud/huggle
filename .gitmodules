@@ -1,0 +1,3 @@
+[submodule "themes/huggle"]
+	path = themes/huggle
+	url = https://github.com/ktmud/huggle.git

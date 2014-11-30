@@ -1,5 +1,5 @@
 ---
-layoutdir: "template/layouts"
+theme: huggle
 indexes:
   tag: tags
   category: categories

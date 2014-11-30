@@ -6,7 +6,7 @@ slug: zh/intro/
 
 lang: zh
 otherlangs: ["en"]
-otherurls: ["/intro/"]
+otherurls: ["/en/intro/"]
 
 ---
 

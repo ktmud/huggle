@@ -2,7 +2,7 @@
 title: Huggle.
 slogan: Generate a static site faster than ever
 date: 2014-03-04
-slug: "/"
+slug: "en/"
 
 lang: en
 otherlangs: ["zh"]
@@ -16,7 +16,7 @@ now you can <br>
 **edit / preview / serve**
 a site in milliseconds.
 
-<img src="./media/huggle-demo.gif" alt="screen cast" class="img-responsive">
+<img src="../media/huggle-demo.gif" alt="screen cast" class="img-responsive">
 
 <hr>
 <a class="btn btn-primary btn-lg" href="intro/">See how it works</a>
