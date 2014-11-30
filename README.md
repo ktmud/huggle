@@ -24,7 +24,7 @@ build the entire site in seconds.
 
 ## More
 
-Check out the [detailed tutorial](http://ktmud.github.io/huggle/intro/).
+Check out the [detailed tutorial](http://ktmud.github.io/huggle/en/intro/).
 
 ## License
 
