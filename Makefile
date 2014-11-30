@@ -5,6 +5,7 @@ clean:
 	rm -rf public
 
 build:
+	git submodule update
 	hugo
 
 gh-pages: build
