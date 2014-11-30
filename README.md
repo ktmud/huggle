@@ -1,4 +1,4 @@
-# Huggle
+# [Huggle](http://ktmud.github.io/huggle/en/intro/)
 
 Hugo theme boilerplate with Gulp.js and multiple-language support.
 
@@ -14,7 +14,7 @@ build the entire site in seconds.
    Long story short: `brew install hugo`
 1. Create a site: `hugo new site /path/to/site`
 1. `cd /path/to/site`
-1. `git clone https://github.com/ktmud/huggle.git huggle`
+1. `git clone https://github.com/ktmud/huggle.git theme/huggle`
 
 ### Start blogging
 
@@ -26,7 +26,7 @@ build the entire site in seconds.
 
 Check out the [detailed tutorial](http://ktmud.github.io/huggle/en/intro/).
 
+
 ## License
 
 MIT
-
