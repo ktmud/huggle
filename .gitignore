@@ -24,6 +24,7 @@ node_modules
 bower_components
 _gh_pages
 template
+themes
 public
 temp
 tmp
