@@ -1,8 +1,8 @@
 # This is for gh-pages branch
 .DS_Store
 
-_gh_pages
 themes
+_gh_pages
 
 node_modules
 bower_components

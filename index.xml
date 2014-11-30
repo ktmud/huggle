@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on Huggle. </title>
-    <link>http://ktmud.github.io/huggle/index.xml</link>
+      <title> on Huggle. </title>
+    <link>http://ktmud.github.io/huggle/</link>
     <language>en</language>
     <author>Jesse Yang</author>
     <rights>Copyright (c) 2008 - 2013, Jesse Yang; all rights reserved.</rights>
-    <updated>2014-03-08 16:59:35 &#43;0800 CST</updated>
+    <updated>2014-03-08 16:59:35 &#43;0800 &#43;0800</updated>
     
     <item>
       <language>zh</language>
       <title>Hugo &#43; gulp.js = Huggle.</title>
-      <link>http://ktmud.github.io/huggle/zh/intro</link>
-      <pubDate>Sat, 08 Mar 2014 16:59:35 CST</pubDate>
+      <link>http://ktmud.github.io/huggle/zh/intro/</link>
+      <pubDate>Sat, 08 Mar 2014 16:59:35 &#43;0800</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/huggle/zh/intro</guid>
+      <guid>http://ktmud.github.io/huggle/zh/intro/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;这是什么？&lt;/h2&gt;
+&lt;h2 id=&#34;这是什么:58caf3bc885325a580f944573ab944f3&#34;&gt;这是什么？&lt;/h2&gt;
 
 &lt;p&gt;Huggle 并非一个全新的工具，它只是整合 Hugo + gulp.js 两大工具的一个示范，
 目标是帮助你&lt;strong&gt;更快速地构建静态网站&lt;/strong&gt;，如个人博客、公司/项目主页、作品集网站等。&lt;/p&gt;
@@ -30,7 +30,7 @@
 &lt;p&gt;为了不让前端构建过程拖后腿， Huggle 将同样以快著称的 &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; 与 Hugo 结合在一起，
 为你演示构建静态网站的速度极限。&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;开始使用&lt;/h2&gt;
+&lt;h2 id=&#34;开始使用:58caf3bc885325a580f944573ab944f3&#34;&gt;开始使用&lt;/h2&gt;
 
 &lt;p&gt;要开始使用 Huggle ，仅需两步：&lt;/p&gt;
 
@@ -43,9 +43,9 @@
 
 &lt;p&gt;安装完成，执行 &lt;code&gt;make watch&lt;/code&gt; ，即可在开始在 &lt;code&gt;content/&lt;/code&gt; 目录下编辑你的文章。&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;进阶&lt;/h2&gt;
+&lt;h2 id=&#34;进阶:58caf3bc885325a580f944573ab944f3&#34;&gt;进阶&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;改善开发体验&lt;/h3&gt;
+&lt;h3 id=&#34;改善开发体验:58caf3bc885325a580f944573ab944f3&#34;&gt;改善开发体验&lt;/h3&gt;
 
 &lt;p&gt;Huggle 打包了大量流行的开发者福利：&lt;/p&gt;
 
@@ -58,7 +58,7 @@
 你也可以按照自己的习惯将 sass 换成习惯的 less 或 stylus ，只需安装相应的 &lt;a href=&#34;http://gulpjs.com/plugins/&#34;&gt;gulp 插件&lt;/a&gt;即可。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;多语言支持&lt;/h3&gt;
+&lt;h3 id=&#34;多语言支持:58caf3bc885325a580f944573ab944f3&#34;&gt;多语言支持&lt;/h3&gt;
 
 &lt;p&gt;通过添加一些自定义参数，以及按条理组织 Url ，你可以利用 Hugo 轻松搭建多语言网站：&lt;/p&gt;
 
@@ -69,14 +69,14 @@
 
 &lt;li&gt;&lt;p&gt;指定此文章其他语言版本的链接：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;yaml&#34;&gt;otherlangs: [&amp;quot;en&amp;quot;]
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;otherlangs: [&amp;quot;en&amp;quot;]
 otherurls: [&amp;quot;/en/article-title&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;如本文&lt;a href=&#34;https://raw.github.com/ktmud/huggle/master/content/intro.zh.md&#34;&gt;源码所示&lt;/a&gt;：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;yaml&#34;&gt;---
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
 title: Hugo + gulp.js = Huggle.
 subtitle: 速度极快的静态网站构建工具
 date: 2014-03-04
@@ -88,7 +88,7 @@ otherurls: [&amp;quot;/intro/&amp;quot;]
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_5&#34;&gt;编辑模版&lt;/h2&gt;
+&lt;h2 id=&#34;编辑模版:58caf3bc885325a580f944573ab944f3&#34;&gt;编辑模版&lt;/h2&gt;
 
 &lt;p&gt;Hugo 使用 golang 的 &lt;a href=&#34;http://golang.org/pkg/text/template/&#34;&gt;text/template&lt;/a&gt; ，语法极为简单。
 你可以在 go 的官方文档或者 &lt;a href=&#34;http://hugo.spf13.com/layout/go-templates&#34;&gt;Hugo的文档&lt;/a&gt; 里详细了解。&lt;/p&gt;
@@ -102,30 +102,30 @@ otherurls: [&amp;quot;/intro/&amp;quot;]
 
 &lt;p&gt;因此，对于语句：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;双引号（&lt;code&gt;&amp;quot;&lt;/code&gt;）不能写作单引号，&lt;code&gt;.&lt;/code&gt; 后面的空格也不能省略。&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_6&#34;&gt;条件判断&lt;/h3&gt;
+&lt;h3 id=&#34;条件判断:58caf3bc885325a580f944573ab944f3&#34;&gt;条件判断&lt;/h3&gt;
 
 &lt;p&gt;如果不等于：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ if ne .Url &amp;quot;/&amp;quot; }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ if ne .Url &amp;quot;/&amp;quot; }}
   &amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}&amp;quot;&amp;gt;Back Home&amp;lt;/a&amp;gt;
 {{ end }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;或者&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ if not (eq .Url &amp;quot;/&amp;quot;) }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ if not (eq .Url &amp;quot;/&amp;quot;) }}
   &amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}&amp;quot;&amp;gt;Back Home&amp;lt;/a&amp;gt;
 {{ end }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;两个条件：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ if or (ne .Url &amp;quot;/&amp;quot;) (ne .Url &amp;quot;/en/&amp;quot;) }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ if or (ne .Url &amp;quot;/&amp;quot;) (ne .Url &amp;quot;/en/&amp;quot;) }}
   &amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}&amp;quot;&amp;gt;Back Home&amp;lt;/a&amp;gt;
 {{ end }}
 &lt;/code&gt;&lt;/pre&gt;
@@ -133,25 +133,25 @@ otherurls: [&amp;quot;/intro/&amp;quot;]
 &lt;p&gt;没有 &lt;code&gt;unless&lt;/code&gt; ，但是可以 &lt;code&gt;if not&lt;/code&gt; 。除了 &lt;code&gt;eq&lt;/code&gt;, &lt;code&gt;ne&lt;/code&gt;，还有还有 &lt;code&gt;lt&lt;/code&gt;, &lt;code&gt;le&lt;/code&gt;, &lt;code&gt;gt&lt;/code&gt;, &lt;code&gt;ge&lt;/code&gt;，
 分别代表小于、小于等于、大于、大于等于。&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_7&#34;&gt;Context 和循环枚举&lt;/h3&gt;
+&lt;h3 id=&#34;context-和循环枚举:58caf3bc885325a580f944573ab944f3&#34;&gt;Context 和循环枚举&lt;/h3&gt;
 
 &lt;p&gt;设 &lt;code&gt;.Params.tags&lt;/code&gt; 为一个数组：&lt;code&gt;[&#39;标签1&#39;, &#39;标签2&#39;]&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ range .Params.tags }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ range .Params.tags }}
   &amp;lt;a href=&amp;quot;{{ $.Site.Params.baseurl }}tag/{{ . }}&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;
 {{ end }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;注意你可以使用 &lt;code&gt;{{ $.OuterValue }}&lt;/code&gt; 获取一个 Context 外部的变量(&lt;a href=&#34;http://stackoverflow.com/questions/14800204/in-a-template-how-do-you-access-an-outer-scope-while-inside-of-a-with-or-rang&#34;&gt;via&lt;/a&gt;)。&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_8&#34;&gt;时间格式化&lt;/h3&gt;
+&lt;h3 id=&#34;时间格式化:58caf3bc885325a580f944573ab944f3&#34;&gt;时间格式化&lt;/h3&gt;
 
 &lt;p&gt;使用类似于 &lt;code&gt;{{ .Date.Format &amp;quot;Mon, 02 Jan 2006 15:04:05 MST&amp;quot; }}&lt;/code&gt; 来格式化时间。
 注意，这些月份和时间的数字&lt;a href=&#34;http://stackoverflow.com/questions/14106541/go-parsing-date-time-030strings-which-are-not-standard-formats&#34;&gt;并非它看起来那么随意&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;可用数字一览表：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;const (
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;const (
     stdLongMonth      = &amp;quot;January&amp;quot;
     stdMonth          = &amp;quot;Jan&amp;quot;
     stdNumMonth       = &amp;quot;1&amp;quot;
@@ -186,80 +186,73 @@ otherurls: [&amp;quot;/intro/&amp;quot;]
     <item>
       <language>en</language>
       <title>Hugo &#43; gulp.js = Huggle.</title>
-      <link>http://ktmud.github.io/huggle/intro</link>
-      <pubDate>Sat, 08 Mar 2014 16:59:24 CST</pubDate>
+      <link>http://ktmud.github.io/huggle/en/intro/</link>
+      <pubDate>Sat, 08 Mar 2014 16:59:24 &#43;0800</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/huggle/intro</guid>
+      <guid>http://ktmud.github.io/huggle/en/intro/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is not an independent tool, it&amp;rsquo;s just a demonstation of how to integrate
-&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Huggle&lt;/strong&gt; is a simple demonstation of how to integrate
+&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt; with multi-language support.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; is a fast and flexible static site generator written in Go.
 It does an amazing job in organizing, templating and building contents.
-&lt;strong&gt;Gulp.js&lt;/strong&gt; is a streaming build system (mostly) for front-end code, which is also very fast.&lt;/p&gt;
+&lt;strong&gt;Gulp.js&lt;/strong&gt; is a streaming build system (mostly) for front-end code, which is also super fast.&lt;/p&gt;
 
 &lt;p&gt;Huggle to Hugo, is much like &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; to &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;.
-But with the ability to reuse what NodeJS compunity has created.&lt;/p&gt;
+But with the ability to reuse what node.js compunity has offered.&lt;/p&gt;
 
-&lt;p&gt;Actually, there is a Huggle equivalent in pure NodeJS, called &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;,
-which run itself as a grunt plugin. It provides highly customizable configure options,
-and a seamless integration with many existing Grunt plugins. Unfortunately, it&amp;rsquo;s just not fast enough.
-To me, the &lt;code&gt;Gruntfile.js&lt;/code&gt; is not as readable as &lt;code&gt;gulpfile.js&lt;/code&gt;, too.&lt;/p&gt;
+&lt;p&gt;You may have seen some equivalents in pure node.js, like &lt;a href=&#34;http://assemble.io/&#34;&gt;Assemble&lt;/a&gt;.
+But unfortunately, they are just not fast enough.&lt;/p&gt;
 
-&lt;p&gt;To gain more speed and ease, I choose to use
-&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; with &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;. The two are both designed to be
+&lt;p&gt;To gain more speed and ease, let&amp;rsquo;s try
+&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;. The two are both designed to be
 the fastest of its kind.&lt;/p&gt;
 
 &lt;p&gt;By running two tasks &amp;ndash; &lt;strong&gt;generating html from organized markdowns&lt;/strong&gt; and
 &lt;strong&gt;building programmable css/js&lt;/strong&gt;, seperately, we gain the maximum speed and flexibility.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_1&#34;&gt;What are the benefits?&lt;/h3&gt;
+&lt;h3 id=&#34;what-are-the-benefits:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;What are the benefits?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Build a 200+ blogs site in seconds&lt;/li&gt;
-&lt;li&gt;Edit, save, and see live changes in less than on second&lt;/li&gt;
-&lt;li&gt;Organize contents in &lt;a href=&#34;http://hugo.spf13.com/content/organization&#34;&gt;a meaningful way&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Simple yet powerful golang html template, with partials and &lt;a href=&#34;http://hugo.spf13.com/extras/shortcodes&#34;&gt;shortcodes&lt;/a&gt; support&lt;/li&gt;
+&lt;li&gt;Edit, save, and see live changes in less than one second&lt;/li&gt;
 &lt;li&gt;Write site UI in coffee/stylus/sass/less, anything you like&lt;/li&gt;
 &lt;li&gt;Write browser code like your are in node.js&lt;/li&gt;
 &lt;li&gt;Lightweight client site or pre-rendered syntax highlight&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Quick start&lt;/h2&gt;
+&lt;h2 id=&#34;quick-start:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Quick start&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://hugo.spf13.com/overview/installing&#34;&gt;Install hugo&lt;/a&gt; //
-Long story short: &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;download the binary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Fork and clone &lt;a href=&#34;https://github.com/ktmud/huggle&#34;&gt;this repo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make init&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Create a &lt;code&gt;your-post.md&lt;/code&gt; under &lt;code&gt;content/posts/&lt;/code&gt; and edit it&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make server&lt;/code&gt; to see the result&lt;/li&gt;
+Long story short: &lt;code&gt;brew install hugo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a site: &lt;code&gt;hugo new site /path/to/site&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd /path/to/site&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/ktmud/huggle.git theme/huggle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd them/huggle &amp;amp;&amp;amp; make init&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you want to update the appearance of your site:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;(optional) Install &lt;a href=&#34;https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei&#34;&gt;livereload&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make watch&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Edit files under &lt;code&gt;/assets&lt;/code&gt; and &lt;code&gt;/layouts&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;If you want to update the appearance of your site, you can just for the theme and update source files under &amp;ldquo;static/assets&amp;rdquo; and &amp;ldquo;layouts&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;When you are ready to publish your site, use &lt;code&gt;make gh-pages&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Also, don&amp;rsquo;t forget to look into docs on &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;dive-in:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Dive in&lt;/h2&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Dive in&lt;/h2&gt;
+&lt;p&gt;Don&amp;rsquo;t forget to check out docs on &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; and &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;Syntax Highlighting&lt;/h3&gt;
+&lt;h2 id=&#34;extras:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Extras&lt;/h2&gt;
+
+&lt;h3 id=&#34;syntax-highlighting:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Syntax Highlighting&lt;/h3&gt;
 
 &lt;p&gt;Hugo comes with a built in Syntax Highlighting support, based on &lt;a href=&#34;http://pygments.org/&#34;&gt;pygments&lt;/a&gt;.
 To maximize the build speed, &lt;a href=&#34;http://prismjs.com/&#34;&gt;Prism.js&lt;/a&gt; is used by Huggle, so you can just write Github flavored
 code block, then render syntax highlighting on the client side.&lt;/p&gt;
 
 &lt;pre class=&#34;language-markdown&#34;&gt;
+
 ```javascript
 console.log(&#34;Give me a Huggle!&#34;)
 ```
@@ -267,37 +260,50 @@ console.log(&#34;Give me a Huggle!&#34;)
 
 &lt;p&gt;The output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;javascript&#34;&gt;console.log(&amp;quot;Give me a Huggle!&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log(&amp;quot;Give me a Huggle!&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;toc_5&#34;&gt;Trouble shooting&lt;/h3&gt;
+&lt;h3 id=&#34;trouble-shooting:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Trouble shooting&lt;/h3&gt;
 
-&lt;h4 id=&#34;toc_6&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
+&lt;h4 id=&#34;rendering-error-html-template-xxx-html-is-an-incomplete-template:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Rendering error: html/template: &amp;ldquo;xxx.html&amp;rdquo; is an incomplete template&lt;/h4&gt;
 
 &lt;p&gt;It is because there is grammer error in your golange html template.
 Remember, you can only use double quote for strings.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
+&lt;pre&gt;&lt;code class=&#34;language-gotmpl&#34;&gt;{{ template &amp;quot;chrome/includes.html&amp;quot; . }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Use &lt;code&gt;&amp;quot;&lt;/code&gt; instead of &lt;code&gt;&#39;&lt;/code&gt;, and blankspace after the &lt;code&gt;.&lt;/code&gt; are all mandatory.&lt;/p&gt;
+
+&lt;h3 id=&#34;limitations:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Limitations&lt;/h3&gt;
+
+&lt;p&gt;Hugo is relative new, there are some limitations if you want to try it now:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;no pagination support yet&lt;/li&gt;
+&lt;li&gt;will rebuild the whole site when changes detected by &lt;code&gt;hugo --watch&lt;/code&gt;,
+though total time consumed may be negligible.&lt;/li&gt;
+&lt;li&gt;no easy way to import a Wordpress/jekyll blog yet.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://github.com/spf13/hugo/blob/master/docs/content/meta/roadmap.md&#34;&gt;roadmap&lt;/a&gt; for what&amp;rsquo;s missing (and coming) now.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <language>en</language>
       <title>Huggle.</title>
-      <link>http://ktmud.github.io/huggle/</link>
+      <link>http://ktmud.github.io/huggle/en/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/huggle/</guid>
+      <guid>http://ktmud.github.io/huggle/en/</guid>
       <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
 Combine the power of &lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;,
 now you can &lt;br&gt;
 &lt;strong&gt;edit / preview / serve&lt;/strong&gt;
 a site in milliseconds.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./media/huggle-demo.gif&#34; alt=&#34;screen cast&#34; class=&#34;img-responsive&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../media/huggle-demo.gif&#34; alt=&#34;screen cast&#34; class=&#34;img-responsive&#34;&gt;&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -308,10 +314,10 @@ a site in milliseconds.&lt;/p&gt;
     <item>
       <language>zh</language>
       <title>Huggle.</title>
-      <link>http://ktmud.github.io/zh/</link>
+      <link>http://ktmud.github.io/huggle/zh/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
       <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/zh/</guid>
+      <guid>http://ktmud.github.io/huggle/zh/</guid>
       <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
 整合两大极速工具：&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;，&lt;br&gt;
 &lt;strong&gt;编辑 / 预览 / 部署&lt;/strong&gt; 一个站点能以毫秒记。&lt;/p&gt;
