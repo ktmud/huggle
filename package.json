@@ -1,6 +1,6 @@
 {
   "name": "huggle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "static site generator boilterplate with gulp.js and hugo",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ktmud/hugulp"
+    "url": "git://github.com/ktmud/huggle"
   },
   "keywords": [
     "static",
@@ -19,15 +19,15 @@
   "author": "ktmud <kissmud@gmail.com>",
   "license": "SimPL",
   "bugs": {
-    "url": "https://github.com/ktmud/hugulp/issues"
+    "url": "https://github.com/ktmud/huggle/issues"
   },
-  "homepage": "https://github.com/ktmud/hugulp",
+  "homepage": "https://github.com/ktmud/huggle",
   "devDependencies": {
     "gulp-bower-files": "~0.1.11",
     "gulp-uglify": "^0.2.1",
     "gulp-stylus": "0.0.13",
     "gulp": "^3.5.5",
-    "gulp-browserify": "^0.4.6",
+    "gulp-browserify": "^0.5.0",
     "gulp-concat": "^2.1.7",
     "gulp-rename": "^1.2.0",
     "gulp-livereload": "^1.2.0",

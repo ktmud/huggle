@@ -9,6 +9,7 @@ lib-cov
 *.seed
 *.sublime-*
 *.zip
+*.bak
 .DS_Store
 
 pids
@@ -18,6 +19,7 @@ build
 npm-debug.log
 TODO.md
 
+static/assets/*
 node_modules
 bower_components
 _gh_pages

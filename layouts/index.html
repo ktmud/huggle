@@ -1,0 +1,16 @@
+{{ partial "layouts/landing.begin.html" . }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ .Site.Title }}</title>
+	<meta http-equiv="refresh" content="0; url={{ .Site.BaseUrl }}/en/">
+</head>
+<body onload="window.location='en';">
+	<div class="home">
+		<h1 class="heading">{{ .Title }}</h1>
+		<p class="slogan"><em>{{ .Params.slogan }}</em>
+	</div>
+  {{ partial "footer.langed.html" . }}
+</body>
+</html>

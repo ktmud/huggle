@@ -2,20 +2,18 @@ var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
 var plugins = require('gulp-load-plugins')()
 
-var sourcedir = "template/assets"
+var sourcedir = 'src'
 var src = {
   bower: ['bower.json', '.bowerrc'],
-  statics: ['template/static/**/*'],
   styles: [sourcedir + '/styles/**/*.+(css|scss)'],
   scripts: [sourcedir + '/scripts/**/*.+(js|coffee)'],
   // The entry point of a browserify bundle
   // add as many bundles as you wish
   main: sourcedir + '/scripts/app.coffee',
 }
-var publishdir = 'public'
 var dist = {
-  all: [publishdir + '/**/*'],
-  assets: publishdir + '/static/'
+  all: ['dist/**/*'],
+  assets: 'static/assets'
 }
 var debug = true
 
@@ -41,11 +39,6 @@ gulp.task('bower', function() {
         path.dirname = '/fonts'
       }
     }))
-    .pipe(gulp.dest(dist.assets))
-})
-// sync sourceDir to public dir
-gulp.task('sync', function() {
-  return gulp.src(src.statics)
     .pipe(gulp.dest(dist.assets))
 })
 
@@ -78,9 +71,8 @@ gulp.task('css', buildCSS)
 gulp.task('js', buildJS)
 
 
-gulp.task('watch', ['bower', 'sync', 'css', 'js'], function() {
+gulp.task('watch', ['bower', 'css', 'js'], function() {
   gulp.watch(src.bower, ['bower'])
-  gulp.watch(src.statics, ['sync'])
   plugins.watch({ glob: src.styles, name: 'styles' }, delayed(buildCSS))
   plugins.watch({ glob: src.scripts, name: 'scripts' }, delayed(buildJS))
 })
@@ -88,20 +80,20 @@ gulp.task('watch', ['bower', 'sync', 'css', 'js'], function() {
 // live reload can emit changes only when at lease one build is done
 //
 gulp.task('live', ['watch'], function() {
-  var server = plugins.livereload()
-  // in case a lot of files changed during a short time
-  var batch = new BatchStream({ timeout: 50 })
-  gulp.watch(dist.all).on('change', function change(file) {
-    // clear directories
-    var urlpath = file.path.replace(__dirname + '/' + publishdir, '')
-    // also clear the tailing index.html
-    // so we can notify livereload.js the right path of files changed
-    urlpath = urlpath.replace('/index.html', '/')
-    batch.write(urlpath)
-  })
-  batch.on('data', function(files) {
-    server.changed(files.join(','))
-  })
+	var server = plugins.livereload()
+	// in case a lot of files changed during a short time
+	var batch = new BatchStream({ timeout: 50 })
+	gulp.watch(dist.all).on('change', function change(file) {
+		// clear directories
+		var urlpath = file.path.replace(__dirname + '/static', '')
+		// also clear the tailing index.html
+		// so we can notify livereload.js the right path of files changed
+		urlpath = urlpath.replace('/index.html', '/')
+		batch.write(urlpath)
+	})
+	batch.on('data', function(files) {
+		server.changed(files.join(','))
+	})
 })
 
 gulp.task('compress-css', ['css'], function() {

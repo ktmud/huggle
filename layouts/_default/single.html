@@ -1,8 +1,8 @@
-{{ template "chrome/layouts/default.begin.html" . }}
+{{ partial "layouts/default.begin.html" . }}
 
 <div class="row">
   <div class="col-md-3 col-md-push-9 aside hidden-print">
-    {{ template "_default/sidebar.html" . }}
+    {{ partial "article-sidebar.html" . }}
   </div>
   <div class="col-md-9 col-md-pull-3">
     <div class="heading">
@@ -11,15 +11,15 @@
         <p class="subtitle">{{ index .Params "subtitle" }}</p>
       {{ end }}
       <div class="meta">
-        {{ template "_default/meta.html" . }}
+        {{ partial "article-meta.html" . }}
       </div>
     </div>
     <article class="readable">
       {{ .Content }}
     </article>
-    {{ template "chrome/disqus.html" . }}
-    {{ template "chrome/footer.html" . }}
+    {{ partial "disqus.html" . }}
+    {{ partial "footer.html" . }}
   </div>
 </div>
 
-{{ template "chrome/layouts/default.end.html" . }}
+{{ partial "layouts/default.end.html" . }}

@@ -2,10 +2,10 @@
 <html lang="{{ or .Params.lang .Site.Params.lang "en-US" }}">
 <head>
 	<meta charset="utf-8">
-  {{ template "chrome/meta.html" . }}
+  {{ partial "meta.html" . }}
   <title>{{ .Title }}</title>
-  {{ template "chrome/head.html" . }}
+  {{ partial "head.html" . }}
 </head>
 <body>
-  {{ template "chrome/header.html" . }}
+  {{ partial "header.html" . }}
   <div class="container">

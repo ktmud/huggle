@@ -1,0 +1,12 @@
+name = "huggle"
+license = "MIT"
+licenselink = "https://github.com/ktmud/huggle/blob/master/LICENSE.md"
+description = "Boliterplate with Gulp.js"
+
+tags = ["gulp", ]
+features = ["blog", ]
+
+[author]
+    name = "Jesse Yang"
+    homepage = "http://ktmud.com/"
+    source_repo = "https://github.com/ktmud/huggle"

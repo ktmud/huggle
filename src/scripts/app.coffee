@@ -7,7 +7,6 @@ $(document.links).filter ->
 
 # Do code highlight
 $('pre > code').each ->
-  this.className = 'language-' + this.className
   Prism.highlightElement(this)
 
 # normalize TOC

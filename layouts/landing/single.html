@@ -1,7 +1,7 @@
-{{ template "chrome/layouts/landing.begin.html" . }}
+{{ partial "layouts/landing.begin.html" . }}
 <div class="home">
   <h1 class="heading">{{ .Title }}</h1>
   <p class="slogan"><em>{{ .Params.slogan }}</em>
   {{ .Content }}
 </div>
-{{ template "chrome/layouts/landing.end.html" . }}
+{{ partial "layouts/landing.end.html" . }}
