@@ -235,9 +235,7 @@ Long story short: &lt;code&gt;brew install hugo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cd them/huggle &amp;amp;&amp;amp; make init&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you want to update the appearance of your site, you can just for the theme and update source files under &amp;ldquo;static/assets&amp;rdquo; and &amp;ldquo;layouts&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;When you are ready to publish your site, use &lt;code&gt;make gh-pages&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to update the appearance of your site, you can just edit the theme and update source files under &amp;ldquo;static/assets&amp;rdquo; and &amp;ldquo;layouts&amp;rdquo;.&lt;/p&gt;
 
 &lt;h2 id=&#34;dive-in:9d57c7ccdb90ef7cc77b9187d39df5d0&#34;&gt;Dive in&lt;/h2&gt;
 
