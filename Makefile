@@ -1,6 +1,11 @@
 watch: clean
 	@hugo server -ws .
 
+init:
+	git submodule init
+	git submodule sync
+	git submodule update
+
 clean:
 	rm -rf public
 
