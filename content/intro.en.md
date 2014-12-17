@@ -49,9 +49,7 @@ By running two tasks -- **generating html from organized markdowns** and
 1. `git clone https://github.com/ktmud/huggle.git theme/huggle`
 1. `cd them/huggle && make init`
 
-If you want to update the appearance of your site, you can just for the theme and update source files under "static/assets" and "layouts".
-
-When you are ready to publish your site, use `make gh-pages`.
+If you want to update the appearance of your site, you can just edit the theme and update source files under "static/assets" and "layouts".
 
 ## Dive in
 
