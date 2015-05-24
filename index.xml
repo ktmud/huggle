@@ -231,8 +231,8 @@ the fastest of its kind.&lt;/p&gt;
 Long story short: &lt;code&gt;brew install hugo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Create a site: &lt;code&gt;hugo new site /path/to/site&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cd /path/to/site&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone https://github.com/ktmud/huggle.git theme/huggle&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd them/huggle &amp;amp;&amp;amp; make init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/ktmud/huggle.git themes/huggle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd themes/huggle &amp;amp;&amp;amp; make init&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;If you want to update the appearance of your site, you can just edit the theme and update source files under &amp;ldquo;static/assets&amp;rdquo; and &amp;ldquo;layouts&amp;rdquo;.&lt;/p&gt;
@@ -289,6 +289,25 @@ though total time consumed may be negligible.&lt;/li&gt;
     </item>
     
     <item>
+      <language>zh</language>
+      <title>Huggle.</title>
+      <link>http://ktmud.github.io/huggle/zh/</link>
+      <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
+      <author>Jesse Yang</author>
+      <guid>http://ktmud.github.io/huggle/zh/</guid>
+      <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
+整合两大极速工具：&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;，&lt;br&gt;
+&lt;strong&gt;编辑 / 预览 / 部署&lt;/strong&gt; 一个站点能以毫秒记。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../media/huggle-demo.gif&#34; alt=&#34;screen cast&#34; class=&#34;img-responsive&#34;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a class=&#34;btn btn-primary btn-lg&#34; href=&#34;intro/&#34;&gt;详细了解 &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <language>en</language>
       <title>Huggle.</title>
       <link>http://ktmud.github.io/huggle/en/</link>
@@ -306,25 +325,6 @@ a site in milliseconds.&lt;/p&gt;
 &lt;hr&gt;
 
 &lt;p&gt;&lt;a class=&#34;btn btn-primary btn-lg&#34; href=&#34;intro/&#34;&gt;See how it works&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <language>zh</language>
-      <title>Huggle.</title>
-      <link>http://ktmud.github.io/huggle/zh/</link>
-      <pubDate>Tue, 04 Mar 2014 00:00:00 UTC</pubDate>
-      <author>Jesse Yang</author>
-      <guid>http://ktmud.github.io/huggle/zh/</guid>
-      <description>&lt;p&gt;&lt;p class=&#34;intro&#34;&gt;
-整合两大极速工具：&lt;a href=&#34;http://hugo.spf13.com/&#34;&gt;Hugo&lt;/a&gt; + &lt;a href=&#34;http://gulpjs.com/&#34;&gt;gulp.js&lt;/a&gt;，&lt;br&gt;
-&lt;strong&gt;编辑 / 预览 / 部署&lt;/strong&gt; 一个站点能以毫秒记。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../media/huggle-demo.gif&#34; alt=&#34;screen cast&#34; class=&#34;img-responsive&#34;&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a class=&#34;btn btn-primary btn-lg&#34; href=&#34;intro/&#34;&gt;详细了解 &amp;raquo;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
