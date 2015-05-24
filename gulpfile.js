@@ -1,6 +1,12 @@
 var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
+var mainBowerFiles = require('main-bower-files')
 var plugins = require('gulp-load-plugins')()
+var sourcemaps = require('gulp-sourcemaps')
+var browserify = require('browserify')
+var buffer = require('vinyl-buffer')
+var source = require('vinyl-source-stream')
+var gutil = require('gulp-util')
 
 var sourcedir = 'src'
 var src = {
@@ -25,7 +31,7 @@ var debug = true
 gulp.task('bower', function() {
   var jsFilter = plugins.filter('**/*.js')
   var cssFilter = plugins.filter('**/*.css')
-  return plugins.bowerFiles()
+  return gulp.src(mainBowerFiles())
     .pipe(jsFilter)
     .pipe(plugins.concat('vendor.js')) // bower components js goes to vendor.js
     .pipe(gulp.dest(dist.assets))
@@ -54,16 +60,18 @@ function buildCSS() {
 }
 
 function buildJS() {
-  return gulp.src(src.main, { read: false })
-    .pipe(plugins.plumber())
-    .pipe(plugins.browserify({
+  return browserify({
+      entries: [src.main],
+      extensions: ['.coffee', '.js'],
       transform: ['coffeeify'],
-      extensions: ['.coffee'],
-      debug: debug
-    }))
-    .pipe(plugins.rename(function(file) {
-      file.extname = '.js'
-    }))
+      debug: true
+    })
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+      .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dist.assets))
 }
 
