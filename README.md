@@ -14,7 +14,7 @@ build the entire site in seconds.
    Long story short: `brew install hugo`
 1. Create a site: `hugo new site /path/to/site`
 1. `cd /path/to/site`
-1. `git clone https://github.com/ktmud/huggle.git theme/huggle`
+1. `git clone https://github.com/ktmud/huggle.git themes/huggle`
 
 ### Start blogging
 
