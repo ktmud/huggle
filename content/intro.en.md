@@ -46,8 +46,8 @@ By running two tasks -- **generating html from organized markdowns** and
    Long story short: `brew install hugo`
 1. Create a site: `hugo new site /path/to/site`
 1. `cd /path/to/site`
-1. `git clone https://github.com/ktmud/huggle.git theme/huggle`
-1. `cd them/huggle && make init`
+1. `git clone https://github.com/ktmud/huggle.git themes/huggle`
+1. `cd themes/huggle && make init`
 
 If you want to update the appearance of your site, you can just edit the theme and update source files under "static/assets" and "layouts".
 
