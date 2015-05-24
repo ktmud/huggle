@@ -1,6 +1,6 @@
 <footer id="footer">
 {{ if .Site.Params.copyright }}
-  {{ .Site.Params.copyright | safeHtml }}
+  {{ .Site.Params.copyright | safeHTML }}
 {{ else }}
   &copy; 2014 {{ or .Site.Params.author .Site.Title }}
 {{ end }}
