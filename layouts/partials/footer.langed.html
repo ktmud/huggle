@@ -6,12 +6,11 @@
 {{ end }}
 &nbsp;
 {{ if .Params.otherlangs }}
-  {{ range $index, $lang := .Params.otherlangs }}
-    <a href="{{ $.Site.BaseURL }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
-    |
+  {{ range $lang_code, $lang_name := .Site.Params.languages }}
+    <a href="{{ $.Site.BaseURL }}{{ $lang_code }}">{{ $lang_name }}</a> |
   {{ end }}
 {{ end }}
-<a href="https://github.com/ktmud/huggle">Github</a>
+  <a href="https://github.com/ktmud/huggle">Github</a>
 </footer>
 <script src="{{ .Site.BaseURL }}/assets/vendor.js"></script>
 <script src="{{ .Site.BaseURL }}/assets/app.js"></script>

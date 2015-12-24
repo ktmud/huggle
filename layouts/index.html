@@ -6,11 +6,16 @@
 	<title>{{ .Site.Title }}</title>
 	<meta http-equiv="refresh" content="0; url={{ .Site.BaseURL }}/en/">
 </head>
-<body onload="window.location='en';">
+<body>
 	<div class="home">
 		<h1 class="heading">{{ .Title }}</h1>
 		<p class="slogan"><em>{{ .Params.slogan }}</em>
+    <ul class="select-languages">
+    {{ range $lang_code, $lang_name := .Site.Params.languages }}
+      <li><a href="{{ $.Site.BaseURL }}{{ $lang_code }}">{{ $lang_name }}</a>
+    {{ end }}
+    </ul>
 	</div>
-  {{ partial "footer.langed.html" . }}
+  {{ partial "footer.html" . }}
 </body>
 </html>
