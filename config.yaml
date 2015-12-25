@@ -1,6 +1,6 @@
 ---
 layoutdir: "template/layouts"
-indexes:
+taxonomies:
   tag: tags
   category: categories
 permalinks:
@@ -8,6 +8,12 @@ permalinks:
   blog: /:year/:month/:slug/
 baseurl: http://ktmud.github.io/huggle/
 title: Huggle.
+
+zh:
+  title: 全部文章
+en:
+  title: All Posts
+
 params:
   analytics: 'UA-1080811-19'  
   disqus: 'huggle'
@@ -17,4 +23,5 @@ params:
   languages:
     en: English
     zh: 中文
+
 ...

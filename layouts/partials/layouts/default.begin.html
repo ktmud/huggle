@@ -1,9 +1,15 @@
+{{ $lang := (or .Params.lang .Site.Params.lang) }}
+{{ $gettext := (index .Site.Data.i18n $lang) }}
+{{ $.Scratch.Set "lang" $lang }}
+{{ $.Scratch.Set "gettext" $gettext }}
+{{ $.Scratch.Set "title" (index $gettext .Title) }}
+
 <!doctype html>
 <html lang="{{ or .Params.lang .Site.Params.lang "en-US" }}">
 <head>
 	<meta charset="utf-8">
   {{ partial "meta.html" . }}
-  <title>{{ .Title }}</title>
+  <title>{{ or ($.Scratch.Get "title") .Title }}</title>
   {{ partial "head.html" . }}
 </head>
 <body>

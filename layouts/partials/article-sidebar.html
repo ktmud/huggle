@@ -1,20 +1,46 @@
+{{ if (or .Params.otherlangs .Params.categories .Params.tags) }}
 <div class="mod tip-box">
   {{ if .Params.otherlangs }}
-  <h5>
-    {{ if eq .Params.lang "en" }}
-      This post is also available in:
-    {{ else if eq .Params.lang "zh" }}
-      本文还有其他语言版本：
-    {{/* else if eq .Params.lang "fr" */}}
-    {{ end }}
-  </h5>
-  <ul class="meta-links">
-    {{ range $index, $lang := .Params.otherlangs }}
-      <li><a href="{{ $.Site.BaseURL }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
-    {{ end }}
-  </ul>
+    <h5>
+      {{ if eq .Params.lang "en" }}
+        This post is also available in:
+      {{ else if eq .Params.lang "zh" }}
+        本文还有其他语言版本：
+      {{/* else if eq .Params.lang "fr" */}}
+      {{ end }}
+    </h5>
+    <ul class="meta-links">
+      {{ range $index, $lang := .Params.otherlangs }}
+        <li><a href="{{ $.Site.BaseURL }}{{ or (echoParam $.Params.otherurls $index) $lang }}">{{ index $.Site.Params.languages $lang }}</a>
+      {{ end }}
+    </ul>
+  {{ end }}
+  {{ if .Params.categories }}
+  <section>
+    <h5>Categories</h5>
+    <ul class="meta-links">
+      {{ range .Params.categories }}
+      <li>
+        <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ if .Params.tags }}
+  <hr>
+  <section>
+    <h5>Tags</h5>
+    <ul class="meta-links">
+      {{ range .Params.tags }}
+      <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
   {{ end }}
 </div>
+{{ end }}
 <div id="toc" class="mod">
   {{ .TableOfContents }}
 </div>

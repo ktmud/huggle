@@ -2,14 +2,8 @@
   <div class="container">
     <ul class="nav navbar-nav main-nav">
       <li>
-      <a class="go-home" href="{{ .Site.BaseURL }}/{{ .Params.lang }}/">Home</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-      <a href="https://github.com/ktmud/huggle">
-        <span class="icon-github"></span>
-        Github
+      <a class="go-home" href="{{ .Site.BaseURL }}{{ $.Scratch.Get "lang" }}/">
+        {{ or (index (.Scratch.Get "gettext") "home") "Home" }}
       </a>
       </li>
     </ul>

@@ -1,0 +1,22 @@
+{{ partial "layouts/default.begin.html" . }}
+
+<div class="row">
+  <div class="col-md-3 col-md-push-9 aside hidden-print">
+  </div>
+  <div class="col-md-9 col-md-pull-3">
+    <h1>{{ or (.Scratch.Get "title") .Title }}</h1>
+		<ul class="posts">
+			{{ range .Paginator.Pages }}
+			<li>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+				<time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+			{{ end }}
+		</ul>
+		{{ template "_internal/pagination.html" . }}
+
+    {{ partial "footer.html" . }}
+  </div>
+</div>
+
+{{ partial "layouts/default.end.html" . }}
+

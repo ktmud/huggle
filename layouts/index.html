@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ .Site.Title }}</title>
-	<meta http-equiv="refresh" content="0; url={{ .Site.BaseURL }}/en/">
 </head>
 <body>
 	<div class="home">
@@ -12,7 +11,7 @@
 		<p class="slogan"><em>{{ .Params.slogan }}</em>
     <ul class="select-languages">
     {{ range $lang_code, $lang_name := .Site.Params.languages }}
-      <li><a href="{{ $.Site.BaseURL }}{{ $lang_code }}">{{ $lang_name }}</a>
+      <li><a href="{{ $.Site.BaseURL }}{{ $lang_code }}/">{{ $lang_name }}</a>
     {{ end }}
     </ul>
 	</div>
