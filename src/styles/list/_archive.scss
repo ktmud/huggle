@@ -1,0 +1,41 @@
+
+.archive {
+  margin-bottom: 10px;
+  padding-left: 40px;
+  position: relative;
+}
+.archive-year {
+  font-size: 1.5em;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  padding: 0.6667em 0;
+  color: #999;
+  font-family: "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif;
+}
+.archive-posts {
+  list-style: none;
+  color: #999;
+  h4 {
+    padding: 0;
+  }
+  li {
+    padding: 1em 0 1em 5em;
+    position: relative;
+    border-bottom: 1px dotted #eee;
+  }
+  time {
+    font-size: 1.08em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0.9em;
+    left: 0;
+  }
+}
+.archive-categories {
+  color: #bbb;
+  a {
+    color: #999;
+    text-decoration: underline;
+  }
+}

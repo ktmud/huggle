@@ -88,7 +88,7 @@ p + pre[class*="language-"] {
 
 /* line 22, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/common/_font.scss */
 body {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -241,17 +241,61 @@ h2, h3, h4 {
   padding-left: 15px;
   border-left: 1px solid #ddd; }
 
-/* line 7, stdin */
+/* line 2, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+.archive {
+  margin-bottom: 10px;
+  padding-left: 40px;
+  position: relative; }
+
+/* line 7, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+.archive-year {
+  font-size: 1.5em;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  padding: 0.6667em 0;
+  color: #999;
+  font-family: "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif; }
+
+/* line 16, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+.archive-posts {
+  list-style: none;
+  color: #999; }
+  /* line 19, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+  .archive-posts h4 {
+    padding: 0; }
+  /* line 22, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+  .archive-posts li {
+    padding: 1em 0 1em 5em;
+    position: relative;
+    border-bottom: 1px dotted #eee; }
+  /* line 27, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+  .archive-posts time {
+    font-size: 1.08em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0.9em;
+    left: 0; }
+
+/* line 35, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+.archive-categories {
+  color: #bbb; }
+  /* line 37, /Users/jesse/projects/yjc-hugo/themes/huggle/src/styles/list/_archive.scss */
+  .archive-categories a {
+    color: #999;
+    text-decoration: underline; }
+
+/* line 8, stdin */
 .home .slogan {
   font-size: 20px;
   margin: 1em 0; }
 
-/* line 11, stdin */
+/* line 12, stdin */
 .home .intro {
   margin: 2em 0;
   font-size: 16px; }
 
-/* line 15, stdin */
+/* line 16, stdin */
 .home hr {
   margin-bottom: 30px;
   margin-top: 30px; }

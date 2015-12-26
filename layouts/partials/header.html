@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="nav navbar-nav main-nav">
       <li>
-      <a class="go-home" href="{{ .Site.BaseURL }}{{ $.Scratch.Get "lang" }}/">
+      <a class="go-home" href="{{ .Site.BaseURL }}/">
         {{ or (index (.Scratch.Get "gettext") "home") "Home" }}
       </a>
       </li>
