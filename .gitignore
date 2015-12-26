@@ -19,7 +19,7 @@ build
 npm-debug.log
 TODO.md
 
-static/assets/*
+static/assets/*.map
 node_modules
 bower_components
 _gh_pages
