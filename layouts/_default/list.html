@@ -11,7 +11,7 @@
         {{ range .Pages }}
         <li>
           <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-          <time datetime="{{ .PublishDate }}">{{ .Date.Format "Jan 2" }}</time>
+          <time pubdate datetime="{{ .PublishDate }}">{{ .Date.Format "Jan 2" }}</time>
           <span class="archive-categories">
             posted in
             {{ range .Params.categories }}

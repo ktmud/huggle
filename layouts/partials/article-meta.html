@@ -7,7 +7,7 @@
     </li>
     <li>
       <span class="icon-clock"></span>
-      <time class="pubdate" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+      <time pubdate class="pubdate" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
     </li>
     {{ if and (isset .Params "commentable") (not .Params.commentable) }}
     {{ else if .Site.Params.disqus }}
@@ -21,7 +21,7 @@
     </li>
     <li>
       <span class="icon-clock"></span>
-      <time class="pubdate" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+      <time pubdate class="pubdate" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
     </li>
     {{ if and (isset .Params "commentable") (not .Params.commentable) }}
     {{ else if .Site.Params.disqus }}
