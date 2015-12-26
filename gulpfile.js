@@ -34,14 +34,14 @@ gulp.task('bower', function() {
   return gulp.src(mainBowerFiles())
     .pipe(jsFilter)
     .pipe(plugins.concat('vendor.js')) // bower components js goes to vendor.js
-    .pipe(gulp.dest(dist.assets))
+    .pipe(gulp.dest(dist.assets + '/js'))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
     .pipe(plugins.concat('vendor.css')) // css goes to vendor.css
-    .pipe(gulp.dest(dist.assets))
+    .pipe(gulp.dest(dist.assets + '/css'))
     .pipe(cssFilter.restore())
     .pipe(plugins.rename(function(path) {
-      if (~path.dirname.indexOf('fonts')) {
+      if (~path.basename.indexOf('glyphicons')) {
         path.dirname = '/fonts'
       }
     }))
@@ -56,7 +56,7 @@ function buildCSS() {
       sourceComments: debug ? 'map' : false
     }))
     .pipe(plugins.concat('app.css'))
-    .pipe(gulp.dest(dist.assets))
+    .pipe(gulp.dest(dist.assets + '/css'))
 }
 
 function buildJS() {
@@ -72,7 +72,7 @@ function buildJS() {
     .pipe(sourcemaps.init({ loadMaps: true }))
       .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(dist.assets))
+    .pipe(gulp.dest(dist.assets + '/js'))
 }
 
 gulp.task('css', buildCSS)
@@ -105,7 +105,7 @@ gulp.task('live', ['watch'], function() {
 })
 
 gulp.task('compress-css', ['css'], function() {
-  return gulp.src(dist.assets)
+  return gulp.src(dist.assets + '/')
     .pipe(plugins.minifyCss())
     .pipe(gulp.dest(dist.assets))
 })

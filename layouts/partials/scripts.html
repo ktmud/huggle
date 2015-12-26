@@ -1,0 +1,16 @@
+<script src="{{ .Site.BaseURL }}assets/js/vendor.js"></script>
+<script src="{{ .Site.BaseURL }}assets/js/app.js"></script>
+
+{{ if (isset .Params "commentable") and (not .Params.commentable) }}
+{{ else if .Site.Params.disqus }}
+<script type="text/javascript">
+  var disqus_shortname = '{{ .Site.Params.disqus }}';
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+{{ end }}
+

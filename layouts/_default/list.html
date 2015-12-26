@@ -4,8 +4,6 @@
   <div class="col-md-3 col-md-push-9 aside hidden-print">
   </div>
   <div class="col-md-9 col-md-pull-3">
-    <h1>{{ or (.Scratch.Get "title") .Title }}</h1>
-
 		{{ range .Data.Pages.GroupByDate "2006" }}
     <section class="archive">
       <h2 class="archive-year">{{ .Key }}</h2>
