@@ -2,7 +2,7 @@
 {{ if .Site.Params.copyright }}
   {{ .Site.Params.copyright | safeHTML }}
 {{ else }}
-  &copy; 2014 {{ or .Site.Params.author .Site.Title }}
+  &copy; 2015 {{ or .Site.Params.author .Site.Title }}
 {{ end }}
 &nbsp;
 {{ if .Params.otherlangs }}
@@ -10,7 +10,6 @@
     <a href="{{ $.Site.BaseURL }}{{ $lang_code }}">{{ $lang_name }}</a> |
   {{ end }}
 {{ end }}
-  <a href="https://github.com/ktmud/huggle">Github</a>
 </footer>
 <script src="{{ .Site.BaseURL }}/assets/vendor.js"></script>
 <script src="{{ .Site.BaseURL }}/assets/app.js"></script>

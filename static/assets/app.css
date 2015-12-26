@@ -153,7 +153,8 @@ h2, h3, h4 {
 
 .absmiddle {
   margin: 4% auto;
-  max-width: 600px; }
+  max-width: 600px;
+  text-align: center; }
 
 #header {
   margin-bottom: 40px;
@@ -241,6 +242,11 @@ h2, h3, h4 {
 .home .intro {
   margin: 2em 0;
   font-size: 16px; }
+
+.home .welcome {
+  color: #eee;
+  font-size: 2em;
+  margin: 2em 0; }
 
 .home hr {
   margin-bottom: 30px;

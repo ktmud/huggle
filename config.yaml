@@ -9,11 +9,6 @@ permalinks:
 baseurl: http://ktmud.github.io/huggle/
 title: Huggle.
 
-zh:
-  title: 全部文章
-en:
-  title: All Posts
-
 params:
   analytics: 'UA-1080811-19'  
   disqus: 'huggle'
